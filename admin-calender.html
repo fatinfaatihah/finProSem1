@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Kalender Pesanan | CaterFlow</title>
+    <title>Kalender Pesanan - Admin CaterFlow</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Ikon -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Palette CaterFlow -->
     <script>
         tailwind.config = {
             theme: {
@@ -30,264 +28,379 @@
         }
     </script>
 </head>
-
 <body class="bg-brand-cream font-sans text-brand-dark antialiased">
 
     <div class="min-h-screen flex">
-
-        <!-- SIDEBAR ADMIN (Fixed Kiri) -->
+        <!-- SIDEBAR ADMIN -->
         <aside class="w-64 bg-brand-brown text-white fixed h-full left-0 top-0 z-30 p-6 flex flex-col justify-between">
             <div>
-                <!-- Logo -->
-                <a href="admin-calender.html" class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
-                    <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-10 w-10 rounded-full object-cover"> CaterFlow
+                <a href="admin-dashboard.html" class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
+                    <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-10 w-10 rounded-full object-cover">
+                    <span>CaterFlow</span>
                 </a>
 
-                <!-- Profil Admin -->
                 <div class="flex items-center gap-3 pb-6 mb-6 border-b border-white/10">
-                    <div
-                        class="w-10 h-10 rounded-full bg-[#C07047] text-white flex items-center justify-center font-bold text-xs">
-                        CF
-                    </div>
+                    <div class="w-10 h-10 rounded-full bg-[#C07047] text-white flex items-center justify-center font-bold text-xs">CF</div>
                     <div>
                         <h4 class="text-xs font-bold text-white">CaterFlow Admin</h4>
                         <small class="text-[10px] text-[#A88B7D]">Administrator</small>
                     </div>
                 </div>
 
-                <!-- Menu Navigasi -->
                 <nav class="space-y-2">
-                    <a href="admin-dashboard.html"
-                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                    <a href="admin-dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
                         <i class="fa-solid fa-house w-4"></i> Dashboard
                     </a>
-                    <a href="admin-orders.html"
-                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                    <a href="admin-orders.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
                         <i class="fa-solid fa-box-archive w-4"></i> Daftar Pesanan
                     </a>
-                    <a href="admin-calender.html"
-                        class="flex items-center gap-3 px-4 py-3 rounded-xl bg-brand-terracota text-white font-semibold text-xs transition-all shadow-sm">
+                    <a href="admin-calendar.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-brand-terracota text-white font-semibold text-xs transition-all shadow-sm">
                         <i class="fa-regular fa-calendar-days w-4"></i> Kalender
                     </a>
-                    <a href="admin-cashflow.html"
-                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                    <a href="admin-cashflow.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
                         <i class="fa-solid fa-receipt w-4"></i> Pencatatan Kas
                     </a>
-                    <a href="#"
-                        class="flex items-center justify-between px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                    <a href="admin-inquiries.html" class="flex items-center justify-between px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
                         <div class="flex items-center gap-3">
                             <i class="fa-regular fa-envelope w-4"></i> Pertanyaan Masuk
                         </div>
-                        <span
-                            class="bg-white text-brand-brown text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+                        <span class="bg-white text-brand-brown text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
                     </a>
-                    <a href="admin-menu.html"
-                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                    <a href="admin-menu.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
                         <i class="fa-solid fa-bars-staggered w-4"></i> Kelola Menu
                     </a>
                 </nav>
             </div>
 
-            <!-- Logout Bottom -->
             <div class="pt-4 border-t border-white/10">
-                <a href="login.html"
-                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#E6AA8E] hover:bg-white/10 hover:text-white font-medium text-xs transition-all">
+                <a href="login.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#E6AA8E] hover:bg-white/10 hover:text-white font-medium text-xs transition-all">
                     <i class="fa-solid fa-right-from-bracket w-4"></i> Keluar
                 </a>
             </div>
         </aside>
 
-        <!-- KONTEN UTAMA ADMIN -->
+        <!-- KONTEN UTAMA KALENDER -->
         <main class="ml-64 flex-1 p-8">
-
-            <!-- TOPBAR HEADER -->
             <div class="flex items-center justify-between mb-8">
                 <div>
                     <small class="text-[11px] text-brand-muted">Panel Admin</small>
                     <h2 class="font-bold text-xs text-brand-brown">Kalender</h2>
                 </div>
                 <div class="flex items-center gap-3">
-                    <button
-                        class="w-9 h-9 rounded-full bg-white border border-brand-creamDark flex items-center justify-center text-brand-brown hover:bg-brand-cream transition-colors">
-                        <i class="fa-regular fa-image text-sm"></i>
-                    </button>
-                    <div
-                        class="w-8 h-8 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs">
-                        CF
-                    </div>
+                    <div class="w-9 h-9 rounded-full bg-white border border-brand-creamDark flex items-center justify-center text-brand-brown"><i class="fa-regular fa-image text-xs"></i></div>
+                    <div class="w-9 h-9 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs">CF</div>
                 </div>
             </div>
 
-            <!-- JUDUL & ACTION BUTTONS -->
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
-                <div>
-                    <h1 class="font-serif text-3xl md:text-4xl text-brand-brown font-normal mb-1">Kalender Pesanan</h1>
-                    <p class="text-brand-muted text-xs md:text-sm">Pantau semua jadwal acara dan potensi bentrok.</p>
-                </div>
-
+            <div class="flex items-center justify-between mb-8">
+                <h1 class="font-serif text-3xl md:text-4xl text-brand-brown">Kalender Pesanan</h1>
                 <div class="flex items-center gap-3">
-                    <button
-                        class="px-5 py-2.5 bg-brand-terracota hover:bg-[#A85E38] text-white rounded-xl text-xs font-semibold shadow-md flex items-center gap-2 transition-colors">
-                        <i class="fa-solid fa-plus text-xs"></i> Tambah Jadwal
+                    <button onclick="openModal()" class="px-5 py-2.5 bg-brand-terracota hover:bg-[#A85E38] text-white text-xs font-semibold rounded-2xl shadow-sm transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-plus"></i> Tambah Jadwal
                     </button>
-                    <div
-                        class="bg-white border border-brand-creamDark rounded-xl p-1 flex items-center gap-1 shadow-sm">
-                        <button
-                            class="px-3 py-1.5 bg-brand-brown text-white text-[11px] font-semibold rounded-lg">Bulanan</button>
-                        <button
-                            class="px-3 py-1.5 text-brand-muted hover:text-brand-brown text-[11px] font-medium rounded-lg">Mingguan</button>
+                    <!-- TOGGLE VIEW MODE (BULANAN / MINGGUAN) -->
+                    <div class="bg-white border border-brand-creamDark p-1 rounded-2xl flex text-xs">
+                        <button id="btn-monthly" onclick="switchView('monthly')" class="px-4 py-1.5 bg-brand-brown text-white font-semibold rounded-xl transition-all">Bulanan</button>
+                        <button id="btn-weekly" onclick="switchView('weekly')" class="px-4 py-1.5 text-brand-muted font-medium hover:text-brand-brown transition-all">Mingguan</button>
                     </div>
                 </div>
             </div>
 
-            <!-- FILTER CARD -->
-            <div class="bg-white rounded-2xl border border-brand-creamDark p-5 mb-6 shadow-sm">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
-
-                    <!-- Input Cari Jadwal -->
-                    <div class="md:col-span-7">
-                        <label class="block text-[11px] font-semibold text-brand-dark mb-1">Cari jadwal</label>
-                        <input type="text" placeholder="Nama pelanggan, ID, atau menu..."
-                            class="w-full px-4 py-2 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors">
-                    </div>
-
-                    <!-- Filter Dropdown -->
-                    <div class="md:col-span-3">
-                        <label class="block text-[11px] font-semibold text-brand-dark mb-1">Status pesanan</label>
-                        <select
-                            class="w-full px-4 py-2 rounded-xl border border-brand-creamDark text-xs bg-white text-brand-dark focus:outline-none focus:border-brand-terracota transition-colors">
-                            <option value="semua">Semua</option>
-                            <option value="pending">Pending</option>
-                            <option value="dp">DP</option>
-                            <option value="lunas">Lunas</option>
-                        </select>
-                    </div>
-
-                    <!-- Total Jadwal Info -->
-                    <div class="md:col-span-2 text-right self-end pb-2">
-                        <span class="text-sm font-bold text-brand-brown">4</span>
-                        <span class="text-[10px] text-brand-muted block">jadwal ditampilkan</span>
-                    </div>
+            <!-- FILTER BAR -->
+            <div class="bg-white rounded-3xl p-6 border border-brand-creamDark shadow-sm mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="w-full md:w-1/2">
+                    <label class="block text-[11px] font-semibold text-brand-brown mb-1.5">Cari jadwal</label>
+                    <input type="text" id="search-input" oninput="renderCalendar()" placeholder="Nama pelanggan, ID, atau menu..." class="w-full px-4 py-2.5 rounded-xl border border-brand-creamDark text-xs focus:outline-none focus:border-brand-terracota">
+                </div>
+                <div class="w-full md:w-1/3">
+                    <label class="block text-[11px] font-semibold text-brand-brown mb-1.5">Status pesanan</label>
+                    <select id="status-filter" onchange="renderCalendar()" class="w-full px-4 py-2.5 rounded-xl border border-brand-creamDark text-xs focus:outline-none focus:border-brand-terracota bg-white">
+                        <option value="Semua">Semua Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="DP">DP (Uang Muka)</option>
+                        <option value="Lunas">Lunas</option>
+                        <option value="Selesai">Selesai</option>
+                    </select>
+                </div>
+                <div class="text-right">
+                    <span id="total-count" class="text-lg font-bold text-brand-brown block">0</span>
+                    <small class="text-[10px] text-brand-muted">jadwal ditampilkan</small>
                 </div>
             </div>
 
-            <!-- MAIN KALENDER CONTAINER -->
-            <div class="bg-white rounded-2xl border border-brand-creamDark overflow-hidden shadow-sm">
-
-                <!-- KALENDER HEADER NAV -->
-                <div class="p-5 border-b border-brand-creamDark flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <button class="w-6 h-6 text-brand-muted hover:text-brand-brown"><i
-                                class="fa-solid fa-chevron-left text-xs"></i></button>
-                        <h3 class="font-serif text-xl font-medium text-brand-brown">April 2026</h3>
-                        <button class="w-6 h-6 text-brand-muted hover:text-brand-brown"><i
-                                class="fa-solid fa-chevron-right text-xs"></i></button>
-                    </div>
-
-                    <div class="flex items-center gap-2 text-[10px] text-brand-muted">
-                        <span class="w-2 h-2 rounded-full bg-red-500"></span> Jadwal bentrok
-                    </div>
+            <!-- NAVIGASI TANGGAL & GRID KALENDER -->
+            <div class="bg-white rounded-3xl border border-brand-creamDark shadow-sm overflow-hidden">
+                <div class="p-6 border-b border-brand-creamDark flex items-center gap-4">
+                    <button onclick="navigateDate(-1)" class="w-8 h-8 rounded-full border border-brand-creamDark flex items-center justify-center text-brand-brown hover:bg-brand-cream transition-all">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <h3 id="current-period-text" class="font-serif text-2xl font-bold text-brand-brown">November 2026</h3>
+                    <button onclick="navigateDate(1)" class="w-8 h-8 rounded-full border border-brand-creamDark flex items-center justify-center text-brand-brown hover:bg-brand-cream transition-all">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
                 </div>
 
-                <!-- DAYS OF WEEK HEADER -->
-                <div
-                    class="grid grid-cols-7 text-center border-b border-brand-creamDark bg-[#FAF6F0] text-[11px] font-semibold text-gray-500 py-2.5">
-                    <div>Sen</div>
-                    <div>Sel</div>
-                    <div>Rab</div>
-                    <div>Kam</div>
-                    <div>Jum</div>
-                    <div>Sab</div>
-                    <div>Min</div>
+                <!-- DYNAMIC GRID KALENDER -->
+                <div class="grid grid-cols-7 text-center border-b border-brand-creamDark bg-brand-cream/30 text-xs font-semibold text-brand-muted py-3">
+                    <div>Sen</div><div>Sel</div><div>Rab</div><div>Kam</div><div>Jum</div><div>Sab</div><div>Min</div>
                 </div>
 
-                <!-- KALENDER GRID (5 Minggu x 7 Hari) -->
-                <div class="grid grid-cols-7 auto-rows-fr divide-x divide-y divide-brand-creamDark/60 text-xs">
-
-                    <!-- Minggu 1 (Bulan Lalu 29-31, April 1-4) -->
-                    <div class="min-h-[100px] p-2 bg-gray-50/50 text-gray-400">29</div>
-                    <div class="min-h-[100px] p-2 bg-gray-50/50 text-gray-400">30</div>
-                    <div class="min-h-[100px] p-2 bg-gray-50/50 text-gray-400">31</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">1</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">2</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">3</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">4</div>
-
-                    <!-- Minggu 2 (April 5-11) -->
-                    <div class="min-h-[100px] p-2 text-brand-dark">5</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">6</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">7</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">8</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">9</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">10</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">11</div>
-
-                    <!-- Minggu 3 (April 12-18) -->
-                    <!-- Tgl 12: Event Raka Pradana (Selesai/Gray) -->
-                    <div class="min-h-[100px] p-2 text-brand-dark">
-                        <span class="block mb-1">12</span>
-                        <div class="bg-gray-100 p-2 rounded-lg border border-gray-200">
-                            <span class="text-[9px] font-bold text-gray-600 block">09:00</span>
-                            <span class="text-[10px] font-bold text-brand-brown block truncate">Raka Pradana</span>
-                            <span class="text-[8px] text-gray-500 block truncate">Snack Box Senja</span>
-                        </div>
-                    </div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">13</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">14</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">15</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">16</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">17</div>
-                    <!-- Tgl 18: Event Alya Putri (Pending/Orange) -->
-                    <div class="min-h-[100px] p-2 text-brand-dark">
-                        <span class="block mb-1">18</span>
-                        <div class="bg-[#FEF6E8] p-2 rounded-lg border border-[#F6E0B9]">
-                            <span class="text-[9px] font-bold text-[#D9822B] block">11:00</span>
-                            <span class="text-[10px] font-bold text-brand-brown block truncate">Alya Putri</span>
-                            <span class="text-[8px] text-gray-500 block truncate">Nasi Box Nusantara</span>
-                        </div>
-                    </div>
-
-                    <!-- Minggu 4 (April 19-25) -->
-                    <div class="min-h-[100px] p-2 text-brand-dark">19</div>
-                    <!-- Tgl 20: Event Bima Santoso (DP/Blue) -->
-                    <div class="min-h-[100px] p-2 text-brand-dark">
-                        <span class="block mb-1">20</span>
-                        <div class="bg-[#EEF4FB] p-2 rounded-lg border border-[#D0E2F6]">
-                            <span class="text-[9px] font-bold text-[#2980B9] block">18:30</span>
-                            <span class="text-[10px] font-bold text-brand-brown block truncate">Bima Santoso</span>
-                            <span class="text-[8px] text-gray-500 block truncate">Prasmanan Keluarga</span>
-                        </div>
-                    </div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">21</div>
-                    <!-- Tgl 22: Event Nadya Kirana (Lunas/Green) -->
-                    <div class="min-h-[100px] p-2 text-brand-dark">
-                        <span class="block mb-1">22</span>
-                        <div class="bg-[#EDF8F1] p-2 rounded-lg border border-[#C5EBD2]">
-                            <span class="text-[9px] font-bold text-[#27AE60] block">12:00</span>
-                            <span class="text-[10px] font-bold text-brand-brown block truncate">Nadya Kirana</span>
-                            <span class="text-[8px] text-gray-500 block truncate">Tumpeng Kuning</span>
-                        </div>
-                    </div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">23</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">24</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">25</div>
-
-                    <!-- Minggu 5 (April 26-30, Mei 1-2) -->
-                    <div class="min-h-[100px] p-2 text-brand-dark">26</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">27</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">28</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">29</div>
-                    <div class="min-h-[100px] p-2 text-brand-dark">30</div>
-                    <div class="min-h-[100px] p-2 bg-gray-50/50 text-gray-400">1</div>
-                    <div class="min-h-[100px] p-2 bg-gray-50/50 text-gray-400">2</div>
-
+                <div id="calendar-grid" class="grid grid-cols-7 auto-rows-fr bg-brand-creamDark/20 gap-[1px]">
+                    <!-- Tampilan grid di-render dinamis sesuai mode (Bulanan / Mingguan) -->
                 </div>
-
             </div>
-
         </main>
     </div>
 
-</body>
+    <!-- MODAL POP-UP TAMBAH JADWAL -->
+    <div id="scheduleModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-3xl w-full max-w-md p-6 border border-brand-creamDark shadow-xl">
+            <div class="flex justify-between items-center pb-4 border-b border-brand-creamDark mb-4">
+                <h3 class="font-serif text-xl font-bold text-brand-brown">Tambah Jadwal Katering</h3>
+                <button onclick="closeModal()" class="text-brand-muted hover:text-brand-brown"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <form onsubmit="saveSchedule(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-brand-brown mb-1">Nama Pemesan / Acara</label>
+                    <input type="text" id="input-name" required placeholder="Contoh: Acara Syukuran Alya" class="w-full px-4 py-2.5 rounded-xl border border-brand-creamDark text-xs focus:outline-none focus:border-brand-terracota">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-brown mb-1">Tanggal</label>
+                        <input type="date" id="input-date" required class="w-full px-3 py-2 rounded-xl border border-brand-creamDark text-xs focus:outline-none focus:border-brand-terracota">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-brown mb-1">Jam Acara</label>
+                        <input type="time" id="input-time" required class="w-full px-3 py-2 rounded-xl border border-brand-creamDark text-xs focus:outline-none focus:border-brand-terracota">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-brown mb-1">Pilih Menu</label>
+                        <select id="input-menu" class="w-full px-3 py-2.5 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota">
+                            <option>Nasi Box Nusantara</option>
+                            <option>Snack Box Senja</option>
+                            <option>Prasmanan Saji Keluarga</option>
+                            <option>Dessert Box Cokelat</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-brown mb-1">Status Pesanan</label>
+                        <select id="input-status" class="w-full px-3 py-2.5 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota font-semibold">
+                            <option value="Pending">Pending</option>
+                            <option value="DP">DP</option>
+                            <option value="Lunas">Lunas</option>
+                            <option value="Selesai">Selesai</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-brand-brown mb-1">Jumlah Porsi</label>
+                    <input type="number" id="input-portion" min="1" placeholder="50" class="w-full px-4 py-2.5 rounded-xl border border-brand-creamDark text-xs focus:outline-none focus:border-brand-terracota">
+                </div>
+                <div class="pt-4 flex justify-end gap-3">
+                    <button type="button" onclick="closeModal()" class="px-4 py-2 rounded-xl border border-brand-creamDark text-xs font-semibold text-brand-muted hover:bg-brand-cream">Batal</button>
+                    <button type="submit" class="px-5 py-2 rounded-xl bg-brand-terracota hover:bg-[#A85E38] text-white text-xs font-semibold">Simpan Jadwal</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
+    <!-- SCRIPT LOGIKA MODE BULANAN / MINGGUAN -->
+    <script>
+        const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        let currentDate = new Date(2026, 10, 12); // Tanggal aktif awal
+        let currentView = 'monthly'; // 'monthly' atau 'weekly'
+
+        let schedules = [
+            { id: 1, name: "Snack Box Senja", date: "2026-11-12", time: "09:00", menu: "Snack Box Senja", status: "DP", portion: 60 },
+            { id: 2, name: "Nasi Box Nusantara", date: "2026-11-18", time: "11:00", menu: "Nasi Box Nusantara", status: "Pending", portion: 50 }
+        ];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCalendar();
+        });
+
+        // 1. Ganti Mode Tampilan (Bulanan vs Mingguan)
+        function switchView(viewMode) {
+            currentView = viewMode;
+            const btnMonthly = document.getElementById('btn-monthly');
+            const btnWeekly = document.getElementById('btn-weekly');
+
+            if (viewMode === 'monthly') {
+                btnMonthly.className = "px-4 py-1.5 bg-brand-brown text-white font-semibold rounded-xl transition-all";
+                btnWeekly.className = "px-4 py-1.5 text-brand-muted font-medium hover:text-brand-brown transition-all";
+            } else {
+                btnWeekly.className = "px-4 py-1.5 bg-brand-brown text-white font-semibold rounded-xl transition-all";
+                btnMonthly.className = "px-4 py-1.5 text-brand-muted font-medium hover:text-brand-brown transition-all";
+            }
+            renderCalendar();
+        }
+
+        // 2. Navigasi Panah Tanggal (Next/Prev Bulan atau Minggu)
+        function navigateDate(dir) {
+            if (currentView === 'monthly') {
+                currentDate.setMonth(currentDate.getMonth() + dir);
+            } else {
+                currentDate.setDate(currentDate.getDate() + (dir * 7));
+            }
+            renderCalendar();
+        }
+
+        // 3. Render Grid Utama
+        function renderCalendar() {
+            const grid = document.getElementById('calendar-grid');
+            grid.innerHTML = '';
+
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+            const statusVal = document.getElementById('status-filter').value;
+            let visibleCount = 0;
+
+            if (currentView === 'monthly') {
+                // RENDER MODE BULANAN
+                const year = currentDate.getFullYear();
+                const month = currentDate.getMonth();
+                document.getElementById('current-period-text').innerText = `${months[month]} ${year}`;
+
+                const firstDayIndex = (new Date(year, month, 1).getDay() + 6) % 7;
+                const totalDays = new Date(year, month + 1, 0).getDate();
+                const prevTotalDays = new Date(year, month, 0).getDate();
+
+                // Tanggal bulan sebelumnya
+                for (let i = firstDayIndex; i > 0; i--) {
+                    grid.innerHTML += `<div class="bg-white min-h-[110px] p-2 text-xs text-gray-300 font-medium">${prevTotalDays - i + 1}</div>`;
+                }
+
+                // Tanggal bulan aktif
+                for (let day = 1; day <= totalDays; day++) {
+                    const formattedDay = day < 10 ? '0' + day : day;
+                    const formattedMonth = (month + 1) < 10 ? '0' + (month + 1) : (month + 1);
+                    const dateStr = `${year}-${formattedMonth}-${formattedDay}`;
+
+                    const daySchedules = schedules.filter(s => {
+                        const matchDate = s.date === dateStr;
+                        const matchSearch = s.name.toLowerCase().includes(searchVal) || s.menu.toLowerCase().includes(searchVal);
+                        const matchStatus = statusVal === 'Semua' || s.status === statusVal;
+                        return matchDate && matchSearch && matchStatus;
+                    });
+
+                    visibleCount += daySchedules.length;
+                    const itemsHtml = generateScheduleBadges(daySchedules);
+
+                    grid.innerHTML += `
+                        <div class="bg-white min-h-[110px] p-2 text-xs font-semibold text-brand-dark flex flex-col justify-between">
+                            <div>
+                                <span>${day}</span>
+                                ${itemsHtml}
+                            </div>
+                        </div>
+                    `;
+                }
+            } else {
+                // RENDER MODE MINGGUAN (7 HARI AKTIF)
+                const currDayOfWeek = (currentDate.getDay() + 6) % 7; // Senin = 0
+                const monday = new Date(currentDate);
+                monday.setDate(currentDate.getDate() - currDayOfWeek);
+
+                const sunday = new Date(monday);
+                sunday.setDate(monday.getDate() + 6);
+
+                document.getElementById('current-period-text').innerText = 
+                    `${monday.getDate()} ${months[monday.getMonth()]} - ${sunday.getDate()} ${months[sunday.getMonth()]} ${sunday.getFullYear()}`;
+
+                for (let i = 0; i < 7; i++) {
+                    const tempDate = new Date(monday);
+                    tempDate.setDate(monday.getDate() + i);
+
+                    const year = tempDate.getFullYear();
+                    const month = tempDate.getMonth();
+                    const day = tempDate.getDate();
+
+                    const formattedDay = day < 10 ? '0' + day : day;
+                    const formattedMonth = (month + 1) < 10 ? '0' + (month + 1) : (month + 1);
+                    const dateStr = `${year}-${formattedMonth}-${formattedDay}`;
+
+                    const daySchedules = schedules.filter(s => {
+                        const matchDate = s.date === dateStr;
+                        const matchSearch = s.name.toLowerCase().includes(searchVal) || s.menu.toLowerCase().includes(searchVal);
+                        const matchStatus = statusVal === 'Semua' || s.status === statusVal;
+                        return matchDate && matchSearch && matchStatus;
+                    });
+
+                    visibleCount += daySchedules.length;
+                    const itemsHtml = generateScheduleBadges(daySchedules);
+
+                    grid.innerHTML += `
+                        <div class="bg-white min-h-[220px] p-3 text-xs font-semibold text-brand-dark flex flex-col justify-between border-t-2 border-brand-terracota/30">
+                            <div>
+                                <div class="flex justify-between items-center mb-2 pb-1 border-b border-brand-creamDark/50">
+                                    <span class="text-brand-brown font-bold text-sm">${day}</span>
+                                    <span class="text-[10px] text-brand-muted font-normal">${months[month].substring(0,3)}</span>
+                                </div>
+                                ${itemsHtml}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            document.getElementById('total-count').innerText = visibleCount;
+        }
+
+        // Helper Badge Warna per Status
+        function generateScheduleBadges(daySchedules) {
+            let itemsHtml = '';
+            daySchedules.forEach(item => {
+                let badgeBg = "bg-amber-50 border-amber-200 text-amber-900"; 
+                if (item.status === 'DP') badgeBg = "bg-blue-50 border-blue-200 text-blue-900";
+                if (item.status === 'Lunas') badgeBg = "bg-emerald-50 border-emerald-200 text-emerald-900";
+                if (item.status === 'Selesai') badgeBg = "bg-gray-100 border-gray-300 text-gray-700";
+
+                itemsHtml += `
+                    <div class="mt-1 ${badgeBg} border p-1.5 rounded-lg text-[10px] shadow-sm">
+                        <div class="flex justify-between font-bold">
+                            <span>${item.time}</span>
+                            <span class="uppercase text-[9px]">${item.status}</span>
+                        </div>
+                        <div class="truncate font-medium">${item.name}</div>
+                    </div>
+                `;
+            });
+            return itemsHtml;
+        }
+
+        function openModal() {
+            document.getElementById('scheduleModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('scheduleModal').classList.add('hidden');
+        }
+
+        function saveSchedule(e) {
+            e.preventDefault();
+            const name = document.getElementById('input-name').value;
+            const date = document.getElementById('input-date').value;
+            const time = document.getElementById('input-time').value;
+            const menu = document.getElementById('input-menu').value;
+            const status = document.getElementById('input-status').value;
+            const portion = document.getElementById('input-portion').value;
+
+            schedules.push({
+                id: Date.now(),
+                name: name,
+                date: date,
+                time: time,
+                menu: menu,
+                status: status,
+                portion: portion
+            });
+
+            currentDate = new Date(date);
+            renderCalendar();
+            closeModal();
+            e.target.reset();
+        }
+    </script>
+</body>
 </html>
