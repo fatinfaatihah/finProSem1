@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang & Checkout - CaterFlow</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Palette CaterFlow -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            brown: '#3A1C0E',
+                            dark: '#2D1A10',
+                            terracota: '#C07047',
+                            cream: '#FAF4EE',
+                            creamDark: '#E8D9CD',
+                            muted: '#7A6558'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-cream font-sans text-brand-dark antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR USER -->
+    <header class="bg-white border-b border-brand-creamDark sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="landingPage.html" class="text-2xl font-bold text-brand-brown flex items-center gap-3">
+                <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-20 w-15 rounded-full object-cover">
+                <span>CaterFlow</span>
+            </a>
+
+            <!-- Navigasi Tengah -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="user-menu.html" class="text-brand-muted hover:text-brand-brown transition-colors">Beranda
+                    Menu</a>
+                <a href="user-orders.html" class="text-brand-muted hover:text-brand-brown transition-colors">Riwayat
+                    Pesanan</a>
+            </nav>
+
+            <!-- Aksi Kanan -->
+            <div class="flex items-center gap-4">
+                <a href="landingPage.html"
+                    class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 border border-brand-creamDark rounded-lg text-xs font-semibold text-brand-brown hover:bg-brand-cream transition-colors">
+                    <i class="fa-solid fa-house text-[11px]"></i> Halaman Utama
+                </a>
+
+                <!-- Cart Icon -->
+                <a href="user-checkout.html"
+                    class="w-9 h-9 rounded-full bg-brand-cream border border-brand-creamDark flex items-center justify-center text-brand-brown hover:bg-brand-creamDark transition-colors relative">
+                    <i class="fa-solid fa-cart-shopping text-xs"></i>
+                    <span
+                        class="w-4 h-4 bg-brand-terracota text-white text-[9px] font-bold rounded-full absolute -top-1 -right-1 flex items-center justify-center">1</span>
+                </a>
+
+                <!-- Profile Avatar -->
+                <div
+                    class="w-9 h-9 rounded-full bg-brand-brown text-white flex items-center justify-center font-bold text-xs">
+                    AP
+                </div>
+
+                <!-- Logout Button -->
+                <a href="login.html"
+                    class="w-9 h-9 rounded-lg border border-brand-creamDark flex items-center justify-center text-brand-muted hover:bg-rose-50 hover:text-rose-600 transition-colors"
+                    title="Keluar">
+                    <i class="fa-solid fa-right-from-bracket text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA CHECKOUT -->
+    <main class="max-w-6xl mx-auto w-full px-6 py-10 flex-1">
+
+        <!-- HEADER SEKSI -->
+        <div class="text-center mb-8">
+            <span class="text-[10px] font-bold tracking-widest text-brand-terracota uppercase block mb-1">SELESAIKAN
+                PESANAN</span>
+            <h1 class="font-serif text-3xl md:text-5xl text-brand-brown font-normal">Keranjang & Checkout</h1>
+        </div>
+
+        <!-- STEP PROGRESS INDICATOR -->
+        <div class="max-w-xl mx-auto mb-10 relative">
+            <!-- Line Background -->
+            <div class="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-0.5 bg-brand-creamDark z-0"></div>
+
+            <div class="relative z-10 flex justify-between">
+                <!-- Step 1 Indicator -->
+                <div class="flex flex-col items-center">
+                    <div id="circle-step-1"
+                        class="w-9 h-9 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs shadow-sm transition-all">
+                        1
+                    </div>
+                    <span id="text-step-1" class="text-[10px] font-semibold text-brand-brown mt-1.5">Keranjang</span>
+                </div>
+
+                <!-- Step 2 Indicator -->
+                <div class="flex flex-col items-center">
+                    <div id="circle-step-2"
+                        class="w-9 h-9 rounded-full bg-brand-creamDark text-brand-muted flex items-center justify-center font-bold text-xs transition-all">
+                        2
+                    </div>
+                    <span id="text-step-2" class="text-[10px] font-medium text-brand-muted mt-1.5">Data Penerima</span>
+                </div>
+
+                <!-- Step 3 Indicator -->
+                <div class="flex flex-col items-center">
+                    <div id="circle-step-3"
+                        class="w-9 h-9 rounded-full bg-brand-creamDark text-brand-muted flex items-center justify-center font-bold text-xs transition-all">
+                        3
+                    </div>
+                    <span id="text-step-3" class="text-[10px] font-medium text-brand-muted mt-1.5">Pembayaran</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN GRID CONTENT (Kiri: Form/Item, Kanan: Ringkasan Pesanan) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+            <!-- SECTION KIRI: MULTI-STEP CONTENT -->
+            <div class="lg:col-span-8">
+
+                <!-- ================= TAHAP 1: KERANJANG ================= -->
+                <div id="step-1-content" class="bg-white rounded-3xl border border-brand-creamDark p-6 shadow-sm">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 py-2">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <img src="assets/img/nasibox.jpg" alt="Nasi Box Nusantara"
+                                class="w-20 h-20 rounded-2xl object-cover border border-brand-creamDark shrink-0">
+                            <div>
+                                <span class="text-[10px] font-semibold text-brand-terracota uppercase block">Nasi
+                                    Box</span>
+                                <h3 class="font-serif text-lg font-bold text-brand-brown">Nasi Box Nusantara</h3>
+                                <p class="text-xs text-brand-muted">Rp35.000 / porsi • min. 20 porsi</p>
+                            </div>
+                        </div>
+
+                        <!-- Quantitiy Counter & Total -->
+                        <div class="flex items-center gap-6 justify-between w-full sm:w-auto">
+                            <div
+                                class="flex items-center border border-brand-creamDark rounded-xl px-2 py-1 bg-brand-cream/40">
+                                <button onclick="updateQty(-1)"
+                                    class="w-7 h-7 flex items-center justify-center text-brand-brown hover:bg-brand-creamDark rounded-lg transition-colors font-bold text-sm">-</button>
+                                <span id="qty-val" class="w-8 text-center font-bold text-xs text-brand-brown">20</span>
+                                <button onclick="updateQty(1)"
+                                    class="w-7 h-7 flex items-center justify-center text-brand-brown hover:bg-brand-creamDark rounded-lg transition-colors font-bold text-sm">+</button>
+                            </div>
+
+                            <span id="item-total" class="font-bold text-sm text-brand-brown">Rp700.000</span>
+                            <button class="text-brand-muted hover:text-rose-600 transition-colors"><i
+                                    class="fa-regular fa-trash-can text-sm"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= TAHAP 2: DATA PENERIMA & ACARA ================= -->
+                <div id="step-2-content"
+                    class="bg-white rounded-3xl border border-brand-creamDark p-6 sm:p-8 shadow-sm hidden">
+                    <h2 class="font-serif text-2xl text-brand-brown mb-6">Data Penerima & Acara</h2>
+
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-brown mb-1.5">Nama penerima</label>
+                                <input type="text" placeholder="Nama lengkap"
+                                    class="w-full px-4 py-3 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-brown mb-1.5">Nomor HP</label>
+                                <input type="text" placeholder="08xxxxxxxxxx"
+                                    class="w-full px-4 py-3 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-brown mb-1.5">Alamat lengkap</label>
+                            <textarea rows="3" placeholder="Tulis alamat dan patokan lokasi"
+                                class="w-full px-4 py-3 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors resize-none"></textarea>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-brown mb-1.5">Tanggal acara</label>
+                                <input type="date"
+                                    class="w-full px-4 py-3 rounded-xl border border-brand-creamDark text-xs bg-white text-brand-dark focus:outline-none focus:border-brand-terracota transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-brand-brown mb-1.5">Jam acara</label>
+                                <input type="time"
+                                    class="w-full px-4 py-3 rounded-xl border border-brand-creamDark text-xs bg-white text-brand-dark focus:outline-none focus:border-brand-terracota transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-brand-brown mb-1.5">Catatan</label>
+                            <textarea rows="3" placeholder="Contoh: tanpa sambal, letakkan di meja penerima..."
+                                class="w-full px-4 py-3 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors resize-none"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ================= TAHAP 3: PEMBAYARAN ================= -->
+                <div id="step-3-content"
+                    class="bg-white rounded-3xl border border-brand-creamDark p-6 sm:p-8 shadow-sm hidden">
+                    <h2 class="font-serif text-2xl text-brand-brown mb-6">Pembayaran</h2>
+
+                    <!-- Box Rekening BCA -->
+                    <div class="bg-brand-brown text-white rounded-2xl p-6 mb-6">
+                        <span class="text-[10px] text-[#D4B9AC] block mb-3">Transfer ke rekening</span>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="bg-white px-3 py-1.5 rounded-lg font-bold text-blue-900 text-sm tracking-wider">
+                                BCA
+                            </div>
+                            <div>
+                                <div class="font-bold text-lg text-white tracking-wide">1280 8890 123</div>
+                                <span class="text-xs text-[#D4B9AC]">a.n. PT CaterFlow Indonesia</span>
+                            </div>
+                        </div>
+                        <div class="border-t border-white/10 pt-4 flex items-center justify-between text-xs">
+                            <span class="text-[#D4B9AC]">Total yang harus dibayar</span>
+                            <span id="pay-total" class="font-bold text-white text-base">Rp700.000</span>
+                        </div>
+                    </div>
+
+                    <!-- Upload Bukti Pembayaran -->
+                    <div
+                        class="border-2 border-dashed border-brand-creamDark rounded-2xl p-8 text-center bg-brand-cream/30 hover:bg-brand-cream/60 transition-colors cursor-pointer">
+                        <i class="fa-solid fa-arrow-up-from-bracket text-brand-terracota text-2xl mb-2"></i>
+                        <h4 class="text-xs font-bold text-brand-terracota mb-1">Unggah bukti pembayaran</h4>
+                        <p class="text-[10px] text-brand-muted">JPG, PNG, atau PDF · maks. 5 MB</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECTION KANAN: RINGKASAN PESANAN (STICKY SIDEBAR) -->
+            <div class="lg:col-span-4 bg-white rounded-3xl border border-brand-creamDark p-6 shadow-sm sticky top-28">
+                <h3 class="font-serif text-xl font-bold text-brand-brown mb-5">Ringkasan Pesanan</h3>
+
+                <div class="space-y-3 pb-4 border-b border-brand-creamDark/60 text-xs">
+                    <div class="flex justify-between">
+                        <span class="text-brand-muted">Subtotal</span>
+                        <span id="subtotal-val" class="font-bold text-brand-brown">Rp700.000</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-brand-muted">Ongkos kirim</span>
+                        <span class="font-bold text-emerald-600">Gratis</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center py-4 mb-6">
+                    <span class="text-xs text-brand-muted font-medium">Total</span>
+                    <span id="total-val" class="font-serif text-2xl font-bold text-brand-brown">Rp700.000</span>
+                </div>
+
+                <!-- Dynamic Buttons per Step -->
+                <div class="space-y-3">
+                    <!-- Step 1 Button -->
+                    <button id="btn-step-1" onclick="goToStep(2)"
+                        class="w-full py-3.5 bg-brand-terracota hover:bg-[#A85E38] text-white font-semibold text-xs rounded-2xl transition-colors shadow-md flex items-center justify-center gap-2">
+                        Lanjut Isi Data <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+
+                    <!-- Step 2 Buttons -->
+                    <button id="btn-step-2" onclick="goToStep(3)"
+                        class="w-full py-3.5 bg-brand-terracota hover:bg-[#A85E38] text-white font-semibold text-xs rounded-2xl transition-colors shadow-md flex items-center justify-center gap-2 hidden">
+                        Lanjut Pembayaran <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+
+                    <!-- Step 3 Button -->
+                    <button id="btn-step-3" onclick="submitOrder()"
+                        class="w-full py-3.5 bg-[#E2C3B3] text-white font-semibold text-xs rounded-2xl cursor-not-allowed transition-colors hidden">
+                        Kirim Pesanan
+                    </button>
+
+                    <!-- Back Button (For Step 2 & 3) -->
+                    <button id="btn-back" onclick="goBack()"
+                        class="w-full py-3.0 bg-brand-cream border border-brand-creamDark hover:bg-brand-creamDark text-brand-brown font-semibold text-xs rounded-2xl transition-colors hidden">
+                        Kembali
+                    </button>
+                </div>
+
+                <!-- Small Info on Step 3 -->
+                <p id="info-step-3" class="text-[9px] text-brand-muted text-center mt-3 hidden">
+                    Pesanan akan berstatus Pending hingga diverifikasi admin.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-brown text-white py-8 border-t border-white/10 mt-12">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#D4B9AC]">
+            <div class="flex items-center gap-2">
+                <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-8 w-6 rounded-full object-cover">
+                <span class="font-bold text-white">CaterFlow</span> © 2026. All rights reserved.
+            </div>
+            <div class="flex gap-6">
+                <a href="landingPage.html" class="hover:text-white transition-colors">Beranda</a>
+                <a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+                <a href="#" class="hover:text-white transition-colors">Bantuan</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT UNTUK MULTI-STEP CHECKOUT & KALKULASI HARGANYA -->
+    <script>
+        let currentStep = 1;
+        let qty = 20;
+        const pricePerItem = 35000;
+
+        function updateQty(change) {
+            qty = Math.max(20, qty + change); // minimal 20 porsi
+            const total = qty * pricePerItem;
+            const formattedTotal = 'Rp' + total.toLocaleString('id-ID');
+
+            document.getElementById('qty-val').innerText = qty;
+            document.getElementById('item-total').innerText = formattedTotal;
+            document.getElementById('subtotal-val').innerText = formattedTotal;
+            document.getElementById('total-val').innerText = formattedTotal;
+            document.getElementById('pay-total').innerText = formattedTotal;
+        }
+
+        function goToStep(step) {
+            currentStep = step;
+
+            // Hide all content sections
+            document.getElementById('step-1-content').classList.add('hidden');
+            document.getElementById('step-2-content').classList.add('hidden');
+            document.getElementById('step-3-content').classList.add('hidden');
+
+            // Hide all action buttons
+            document.getElementById('btn-step-1').classList.add('hidden');
+            document.getElementById('btn-step-2').classList.add('hidden');
+            document.getElementById('btn-step-3').classList.add('hidden');
+            document.getElementById('btn-back').classList.add('hidden');
+            document.getElementById('info-step-3').classList.add('hidden');
+
+            // Reset indicators style
+            const c1 = document.getElementById('circle-step-1');
+            const c2 = document.getElementById('circle-step-2');
+            const c3 = document.getElementById('circle-step-3');
+
+            const t1 = document.getElementById('text-step-1');
+            const t2 = document.getElementById('text-step-2');
+            const t3 = document.getElementById('text-step-3');
+
+            // Show selected step & update indicators
+            if (step === 1) {
+                document.getElementById('step-1-content').classList.remove('hidden');
+                document.getElementById('btn-step-1').classList.remove('hidden');
+
+                c1.className =
+                    "w-9 h-9 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs shadow-sm transition-all";
+                c2.className =
+                    "w-9 h-9 rounded-full bg-brand-creamDark text-brand-muted flex items-center justify-center font-bold text-xs transition-all";
+                c3.className =
+                    "w-9 h-9 rounded-full bg-brand-creamDark text-brand-muted flex items-center justify-center font-bold text-xs transition-all";
+
+                t1.className = "text-[10px] font-semibold text-brand-brown mt-1.5";
+                t2.className = "text-[10px] font-medium text-brand-muted mt-1.5";
+                t3.className = "text-[10px] font-medium text-brand-muted mt-1.5";
+
+            } else if (step === 2) {
+                document.getElementById('step-2-content').classList.remove('hidden');
+                document.getElementById('btn-step-2').classList.remove('hidden');
+                document.getElementById('btn-back').classList.remove('hidden');
+
+                c1.className =
+                    "w-9 h-9 rounded-full bg-brand-brown text-white flex items-center justify-center font-bold text-xs shadow-sm transition-all";
+                c2.className =
+                    "w-9 h-9 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs shadow-sm transition-all";
+                c3.className =
+                    "w-9 h-9 rounded-full bg-brand-creamDark text-brand-muted flex items-center justify-center font-bold text-xs transition-all";
+
+                t1.className = "text-[10px] font-medium text-brand-muted mt-1.5";
+                t2.className = "text-[10px] font-semibold text-brand-brown mt-1.5";
+                t3.className = "text-[10px] font-medium text-brand-muted mt-1.5";
+
+            } else if (step === 3) {
+                document.getElementById('step-3-content').classList.remove('hidden');
+                document.getElementById('btn-step-3').classList.remove('hidden');
+                document.getElementById('btn-back').classList.remove('hidden');
+                document.getElementById('info-step-3').classList.remove('hidden');
+
+                c1.className =
+                    "w-9 h-9 rounded-full bg-brand-brown text-white flex items-center justify-center font-bold text-xs shadow-sm transition-all";
+                c2.className =
+                    "w-9 h-9 rounded-full bg-brand-brown text-white flex items-center justify-center font-bold text-xs shadow-sm transition-all";
+                c3.className =
+                    "w-9 h-9 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs shadow-sm transition-all";
+
+                t1.className = "text-[10px] font-medium text-brand-muted mt-1.5";
+                t2.className = "text-[10px] font-medium text-brand-muted mt-1.5";
+                t3.className = "text-[10px] font-semibold text-brand-brown mt-1.5";
+            }
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function goBack() {
+            if (currentStep > 1) {
+                goToStep(currentStep - 1);
+            }
+        }
+
+        function submitOrder() {
+            // Pengalihan ke halaman Riwayat Pesanan setelah klik "Kirim Pesanan"
+            window.location.href = "user-orders.html";
+        }
+    </script>
+</body>
+
+</html>

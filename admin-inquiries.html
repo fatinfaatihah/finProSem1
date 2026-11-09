@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Pertanyaan Masuk | CaterFlow</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Palette CaterFlow -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            brown: '#3A1C0E',
+                            dark: '#2D1A10',
+                            terracota: '#C07047',
+                            cream: '#FAF4EE',
+                            creamDark: '#E8D9CD',
+                            muted: '#7A6558'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-cream font-sans text-brand-dark antialiased">
+
+    <div class="min-h-screen flex">
+
+        <!-- SIDEBAR ADMIN (Fixed Kiri) -->
+        <aside class="w-64 bg-brand-brown text-white fixed h-full left-0 top-0 z-30 p-6 flex flex-col justify-between">
+            <div>
+                <!-- Logo -->
+                <a href="admin-inquiries.html" class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
+                    <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-10 w-10 rounded-full object-cover"> CaterFlow
+                </a>
+
+                <!-- Profil Admin -->
+                <div class="flex items-center gap-3 pb-6 mb-6 border-b border-white/10">
+                    <div
+                        class="w-10 h-10 rounded-full bg-[#C07047] text-white flex items-center justify-center font-bold text-xs">
+                        CF
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">CaterFlow Admin</h4>
+                        <small class="text-[10px] text-[#A88B7D]">Administrator</small>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi -->
+                <nav class="space-y-2">
+                    <a href="admin-dashboard.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-house w-4"></i> Dashboard
+                    </a>
+                    <a href="admin-orders.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-box-archive w-4"></i> Daftar Pesanan
+                    </a>
+                    <a href="admin-calender.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-regular fa-calendar-days w-4"></i> Kalender
+                    </a>
+                    <a href="admin-cashflow.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-receipt w-4"></i> Pencatatan Kas
+                    </a>
+                    <a href="admin-inquiries.html"
+                        class="flex items-center justify-between px-4 py-3 rounded-xl bg-brand-terracota text-white font-semibold text-xs transition-all shadow-sm">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-regular fa-envelope w-4"></i> Pertanyaan Masuk
+                        </div>
+                        <span
+                            class="bg-white text-brand-brown text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+                    </a>
+                    <a href="admin-menu.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-bars-staggered w-4"></i> Kelola Menu
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Logout Bottom -->
+            <div class="pt-4 border-t border-white/10">
+                <a href="login.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#E6AA8E] hover:bg-white/10 hover:text-white font-medium text-xs transition-all">
+                    <i class="fa-solid fa-right-from-bracket w-4"></i> Keluar
+                </a>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA ADMIN -->
+        <main class="ml-64 flex-1 p-8">
+
+            <!-- TOPBAR HEADER -->
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <small class="text-[11px] text-brand-muted">Panel Admin</small>
+                    <h2 class="font-bold text-xs text-brand-brown">Pertanyaan Masuk</h2>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button
+                        class="w-9 h-9 rounded-full bg-white border border-brand-creamDark flex items-center justify-center text-brand-brown hover:bg-brand-cream transition-colors">
+                        <i class="fa-regular fa-image text-sm"></i>
+                    </button>
+                    <div
+                        class="w-8 h-8 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs">
+                        CF
+                    </div>
+                </div>
+            </div>
+
+            <!-- JUDUL SEKSI -->
+            <div class="mb-8">
+                <h1 class="font-serif text-3xl md:text-4xl text-brand-brown font-normal mb-1">Pertanyaan Masuk</h1>
+                <p class="text-brand-muted text-xs md:text-sm">Jawab pertanyaan konfirmasi dari pelanggan.</p>
+            </div>
+
+            <!-- DAFTAR PERTANYAAN CARDS -->
+            <div class="space-y-6">
+
+                <!-- KARTU 1: ALYA PUTRI -->
+                <div class="bg-white rounded-2xl border border-brand-creamDark p-6 shadow-sm">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#D4A373] text-white flex items-center justify-center font-bold text-sm">
+                                A
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-brand-brown">Alya Putri</h3>
+                                <p class="text-[11px] text-brand-muted">Pesanan CF-1048 • 10 menit lalu</p>
+                            </div>
+                        </div>
+                        <span
+                            class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-amber-100 text-amber-800">Baru</span>
+                    </div>
+
+                    <!-- Bubble Pertanyaan -->
+                    <div class="bg-[#FAF6F0] p-4 rounded-xl text-xs text-brand-dark mb-4 border border-brand-cream/60">
+                        Apakah pesanan saya sudah masuk jadwal produksi? Acara dimulai jam 11.00.
+                    </div>
+
+                    <!-- Form Balasan -->
+                    <form action="#" method="POST" class="flex flex-col sm:flex-row gap-3">
+                        <textarea rows="2" placeholder="Tulis balasan untuk pelanggan..."
+                            class="flex-1 p-3 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors resize-none"></textarea>
+                        <button type="submit"
+                            class="px-6 py-3 bg-brand-terracota hover:bg-[#A85E38] text-white font-semibold text-xs rounded-xl shadow-md transition-colors self-end sm:self-auto h-fit">
+                            Kirim Balasan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- KARTU 2: BIMA SANTOSO -->
+                <div class="bg-white rounded-2xl border border-brand-creamDark p-6 shadow-sm">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#B5838D] text-white flex items-center justify-center font-bold text-sm">
+                                B
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-brand-brown">Bima Santoso</h3>
+                                <p class="text-[11px] text-brand-muted">Pesanan CF-1047 • 10 menit lalu</p>
+                            </div>
+                        </div>
+                        <span
+                            class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-amber-100 text-amber-800">Baru</span>
+                    </div>
+
+                    <!-- Bubble Pertanyaan -->
+                    <div class="bg-[#FAF6F0] p-4 rounded-xl text-xs text-brand-dark mb-4 border border-brand-cream/60">
+                        Bolehkah alamat pengantaran saya ubah ke gedung sebelah?
+                    </div>
+
+                    <!-- Form Balasan -->
+                    <form action="#" method="POST" class="flex flex-col sm:flex-row gap-3">
+                        <textarea rows="2" placeholder="Tulis balasan untuk pelanggan..."
+                            class="flex-1 p-3 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors resize-none"></textarea>
+                        <button type="submit"
+                            class="px-6 py-3 bg-brand-terracota hover:bg-[#A85E38] text-white font-semibold text-xs rounded-xl shadow-md transition-colors self-end sm:self-auto h-fit">
+                            Kirim Balasan
+                        </button>
+                    </form>
+                </div>
+
+                <!-- KARTU 3: NADYA KIRANA -->
+                <div class="bg-white rounded-2xl border border-brand-creamDark p-6 shadow-sm">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-[#6B705C] text-white flex items-center justify-center font-bold text-sm">
+                                N
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-brand-brown">Nadya Kirana</h3>
+                                <p class="text-[11px] text-brand-muted">Pesanan CF-1046 • 10 menit lalu</p>
+                            </div>
+                        </div>
+                        <span
+                            class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-amber-100 text-amber-800">Baru</span>
+                    </div>
+
+                    <!-- Bubble Pertanyaan -->
+                    <div class="bg-[#FAF6F0] p-4 rounded-xl text-xs text-brand-dark mb-4 border border-brand-cream/60">
+                        Mohon konfirmasi apakah tambahan 10 porsi sudah tercatat.
+                    </div>
+
+                    <!-- Form Balasan -->
+                    <form action="#" method="POST" class="flex flex-col sm:flex-row gap-3">
+                        <textarea rows="2" placeholder="Tulis balasan untuk pelanggan..."
+                            class="flex-1 p-3 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors resize-none"></textarea>
+                        <button type="submit"
+                            class="px-6 py-3 bg-brand-terracota hover:bg-[#A85E38] text-white font-semibold text-xs rounded-xl shadow-md transition-colors self-end sm:self-auto h-fit">
+                            Kirim Balasan
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

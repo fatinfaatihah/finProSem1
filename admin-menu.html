@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Kelola Menu | CaterFlow</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Palette CaterFlow -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            brown: '#3A1C0E',
+                            dark: '#2D1A10',
+                            terracota: '#C07047',
+                            cream: '#FAF4EE',
+                            creamDark: '#E8D9CD',
+                            muted: '#7A6558'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-cream font-sans text-brand-dark antialiased">
+
+    <div class="min-h-screen flex">
+
+        <!-- SIDEBAR ADMIN (Fixed Kiri) -->
+        <aside class="w-64 bg-brand-brown text-white fixed h-full left-0 top-0 z-30 p-6 flex flex-col justify-between">
+            <div>
+                <!-- Logo -->
+                <a href="admin-menu.html" class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
+                    <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-10 w-10 rounded-full object-cover">CaterFlow
+                </a>
+
+                <!-- Profil Admin -->
+                <div class="flex items-center gap-3 pb-6 mb-6 border-b border-white/10">
+                    <div
+                        class="w-10 h-10 rounded-full bg-[#C07047] text-white flex items-center justify-center font-bold text-xs">
+                        CF
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">CaterFlow Admin</h4>
+                        <small class="text-[10px] text-[#A88B7D]">Administrator</small>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi -->
+                <nav class="space-y-2">
+                    <a href="admin-dashboard.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-house w-4"></i> Dashboard
+                    </a>
+                    <a href="admin-orders.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-box-archive w-4"></i> Daftar Pesanan
+                    </a>
+                    <a href="admin-calender.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-regular fa-calendar-days w-4"></i> Kalender
+                    </a>
+                    <a href="admin-cashflow.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-receipt w-4"></i> Pencatatan Kas
+                    </a>
+                    <a href="admin-inquiries.html"
+                        class="flex items-center justify-between px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-regular fa-envelope w-4"></i> Pertanyaan Masuk
+                        </div>
+                        <span
+                            class="bg-white text-brand-brown text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+                    </a>
+                    <a href="admin-menu.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl bg-brand-terracota text-white font-semibold text-xs transition-all shadow-sm">
+                        <i class="fa-solid fa-bars-staggered w-4"></i> Kelola Menu
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Logout Bottom -->
+            <div class="pt-4 border-t border-white/10">
+                <a href="login.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#E6AA8E] hover:bg-white/10 hover:text-white font-medium text-xs transition-all">
+                    <i class="fa-solid fa-right-from-bracket w-4"></i> Keluar
+                </a>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA ADMIN -->
+        <main class="ml-64 flex-1 p-8">
+
+            <!-- TOPBAR HEADER -->
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <small class="text-[11px] text-brand-muted">Panel Admin</small>
+                    <h2 class="font-bold text-xs text-brand-brown">Kelola Menu</h2>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button
+                        class="w-9 h-9 rounded-full bg-white border border-brand-creamDark flex items-center justify-center text-brand-brown hover:bg-brand-cream transition-colors">
+                        <i class="fa-regular fa-bell text-sm"></i>
+                    </button>
+                    <div
+                        class="w-8 h-8 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs">
+                        CF
+                    </div>
+                </div>
+            </div>
+
+            <!-- JUDUL SEKSI & TOMBOL ACTION -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                <div>
+                    <span
+                        class="text-[10px] font-bold tracking-widest text-brand-terracota uppercase block mb-1">MANAJEMEN
+                        PRODUK</span>
+                    <h1 class="font-serif text-3xl md:text-4xl text-brand-brown font-normal mb-1">Kelola Menu</h1>
+                    <p class="text-brand-muted text-xs md:text-sm">Kelola menu, harga, serta ketersediaan produk
+                        catering Anda.</p>
+                </div>
+
+                <div>
+                    <button
+                        class="px-5 py-2.5 bg-brand-terracota hover:bg-[#A85E38] text-white rounded-xl text-xs font-semibold shadow-md flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-plus text-xs"></i> Tambah Produk
+                    </button>
+                </div>
+            </div>
+
+            <!-- FILTER & SEARCH BAR -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+                <div class="flex items-center gap-3 w-full md:w-auto flex-1 max-w-lg">
+                    <!-- Search Input -->
+                    <div class="relative flex-1">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                        <input type="text" placeholder="Cari nama menu..."
+                            class="w-full pl-9 pr-4 py-2 rounded-xl border border-brand-creamDark text-xs bg-white focus:outline-none focus:border-brand-terracota transition-colors">
+                    </div>
+                    <!-- Dropdown Kategori -->
+                    <div class="relative min-w-[140px]">
+                        <select
+                            class="w-full pl-8 pr-8 py-2 rounded-xl border border-brand-creamDark text-xs bg-white text-brand-dark focus:outline-none focus:border-brand-terracota transition-colors appearance-none">
+                            <option value="">Semua Kategori</option>
+                            <option value="nasi-box">Nasi Box</option>
+                            <option value="prasmanan">Prasmanan</option>
+                            <option value="tumpeng">Tumpeng</option>
+                            <option value="snack-box">Snack Box</option>
+                            <option value="dessert">Dessert</option>
+                        </select>
+                        <i
+                            class="fa-solid fa-sliders absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                        <i
+                            class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-[10px]"></i>
+                    </div>
+                </div>
+
+                <!-- Export Buttons -->
+                <div class="flex items-center gap-2 w-full md:w-auto justify-end">
+                    <button
+                        class="px-3.5 py-2 bg-white border border-brand-creamDark text-brand-brown hover:bg-brand-cream rounded-xl text-xs font-medium flex items-center gap-1.5 shadow-sm transition-colors">
+                        <i class="fa-solid fa-download text-[10px]"></i> Excel / CSV
+                    </button>
+                    <button
+                        class="px-3.5 py-2 bg-white border border-brand-creamDark text-brand-brown hover:bg-brand-cream rounded-xl text-xs font-medium flex items-center gap-1.5 shadow-sm transition-colors">
+                        <i class="fa-solid fa-download text-[10px]"></i> PDF
+                    </button>
+                </div>
+            </div>
+
+            <!-- TABEL DAFTAR MENU -->
+            <div class="bg-white rounded-2xl border border-brand-creamDark overflow-hidden shadow-sm">
+                <!-- Header Info Tabel -->
+                <div class="p-4 px-6 border-b border-brand-creamDark/60 flex items-center justify-between text-xs">
+                    <div>
+                        <span class="font-bold text-brand-brown">Daftar Menu</span>
+                        <span class="text-[10px] text-brand-muted block">10 produk ditampilkan</span>
+                    </div>
+                    <span class="text-[10px] text-gray-400">Terakhir diperbarui hari ini</span>
+                </div>
+
+                <!-- Table Content -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr
+                                class="bg-[#FAF6F0] border-b border-brand-creamDark text-[10px] font-bold text-gray-400 uppercase tracking-wider">
+                                <th class="py-3 px-6">MENU</th>
+                                <th class="py-3 px-6 text-center">KATEGORI</th>
+                                <th class="py-3 px-6">HARGA</th>
+                                <th class="py-3 px-6">KRITERIA</th>
+                                <th class="py-3 px-6 text-center">STATUS</th>
+                                <th class="py-3 px-6 text-center">AKSI</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-brand-creamDark/40 text-xs">
+
+                            <!-- 1. Nasi Box Nusantara -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-1.jpg" alt="Nasi Box Nusantara"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Nasi Box Nusantara</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-001</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Nasi
+                                        Box</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 45.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 20 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 2. Paket Prasmanan Saji -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-2.jpg" alt="Paket Prasmanan Saji"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Paket Prasmanan Saji</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-002</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Prasmanan</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 85.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 50 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 3. Tumpeng Kuning Istimewa -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-3.jpg" alt="Tumpeng Kuning Istimewa"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Tumpeng Kuning Istimewa</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-003</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Tumpeng</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 650.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 20 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 4. Snack Box Senja -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-4.jpg" alt="Snack Box Senja"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Snack Box Senja</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-004</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Snack
+                                        Box</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 22.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 25 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 5. Nasi Box Ayam Rempah (Status Habis) -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-1.jpg" alt="Nasi Box Ayam Rempah"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Nasi Box Ayam Rempah</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-005</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Nasi
+                                        Box</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 38.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 20 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-rose-50 text-rose-600 border border-rose-200">●
+                                        Habis</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 6. Dessert Box Cokelat -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-2.jpg" alt="Dessert Box Cokelat"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Dessert Box Cokelat</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-006</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Dessert</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 65.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 15 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 7. Prasmanan Keluarga -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-3.jpg" alt="Prasmanan Keluarga"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Prasmanan Keluarga</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-007</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Prasmanan</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 42.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 40 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 8. Mini Tumpeng Syukuran -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-4.jpg" alt="Mini Tumpeng Syukuran"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Mini Tumpeng Syukuran</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-008</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Tumpeng</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 120.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 10 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 9. Prasmanan Akad Hangat -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-1.jpg" alt="Prasmanan Akad Hangat"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Prasmanan Akad Hangat</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-009</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Prasmanan</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 48.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 50 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 10. Prasmanan Corporate -->
+                            <tr class="hover:bg-brand-cream/30 transition-colors">
+                                <td class="py-3.5 px-6">
+                                    <div class="flex items-center gap-3">
+                                        <img src="assets/images/menu-2.jpg" alt="Prasmanan Corporate"
+                                            class="w-10 h-10 rounded-lg object-cover border border-brand-creamDark">
+                                        <div>
+                                            <div class="font-bold text-brand-brown">Prasmanan Corporate</div>
+                                            <div class="text-[9px] text-gray-400">ID: MENU-010</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full text-[10px] font-medium bg-[#FDEFE8] text-[#C07047]">Prasmanan</span>
+                                </td>
+                                <td class="py-3.5 px-6 font-bold text-brand-brown">Rp 52.000</td>
+                                <td class="py-3.5 px-6 text-gray-500">Min. 75 porsi</td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <span
+                                        class="px-3 py-1 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-200">●
+                                        Tersedia</span>
+                                </td>
+                                <td class="py-3.5 px-6 text-center">
+                                    <div class="flex items-center justify-center gap-1.5">
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-gray-600 hover:bg-brand-cream transition-colors"><i
+                                                class="fa-regular fa-pen-to-square text-[11px]"></i></button>
+                                        <button
+                                            class="w-7 h-7 rounded-lg border border-brand-creamDark text-rose-500 hover:bg-rose-50 transition-colors"><i
+                                                class="fa-regular fa-trash-can text-[11px]"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Footer Pagination -->
+                <div
+                    class="p-4 px-6 border-t border-brand-creamDark/60 flex items-center justify-between text-xs text-brand-muted">
+                    <div>
+                        Menampilkan <span class="font-bold text-brand-brown">1-10</span> dari <span
+                            class="font-bold text-brand-brown">10</span> menu
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <button
+                            class="w-7 h-7 rounded-lg border border-brand-creamDark flex items-center justify-center text-gray-400 cursor-not-allowed"><i
+                                class="fa-solid fa-chevron-left text-[10px]"></i></button>
+                        <button
+                            class="w-7 h-7 rounded-lg bg-brand-terracota text-white font-bold flex items-center justify-center">1</button>
+                        <button
+                            class="w-7 h-7 rounded-lg border border-brand-creamDark flex items-center justify-center text-gray-400 cursor-not-allowed"><i
+                                class="fa-solid fa-chevron-right text-[10px]"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

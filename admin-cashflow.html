@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Pencatatan Kas | CaterFlow</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Palette CaterFlow -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            brown: '#3A1C0E',
+                            dark: '#2D1A10',
+                            terracota: '#C07047',
+                            cream: '#FAF4EE',
+                            creamDark: '#E8D9CD',
+                            muted: '#7A6558'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-cream font-sans text-brand-dark antialiased">
+
+    <div class="min-h-screen flex">
+
+        <!-- SIDEBAR ADMIN (Fixed Kiri) -->
+        <aside class="w-64 bg-brand-brown text-white fixed h-full left-0 top-0 z-30 p-6 flex flex-col justify-between">
+            <div>
+                <!-- Logo -->
+                <a href="admin-cashflow.html" class="text-2xl font-bold text-white flex items-center gap-3 mb-8">
+                    <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-10 w-10 rounded-full object-cover"> CaterFlow
+                </a>
+
+                <!-- Profil Admin -->
+                <div class="flex items-center gap-3 pb-6 mb-6 border-b border-white/10">
+                    <div
+                        class="w-10 h-10 rounded-full bg-[#C07047] text-white flex items-center justify-center font-bold text-xs">
+                        CF
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white">CaterFlow Admin</h4>
+                        <small class="text-[10px] text-[#A88B7D]">Administrator</small>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi -->
+                <nav class="space-y-2">
+                    <a href="admin-dashboard.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-house w-4"></i> Dashboard
+                    </a>
+                    <a href="admin-orders.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-box-archive w-4"></i> Daftar Pesanan
+                    </a>
+                    <a href="admin-calender.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-regular fa-calendar-days w-4"></i> Kalender
+                    </a>
+                    <a href="admin-cashflow.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl bg-brand-terracota text-white font-semibold text-xs transition-all shadow-sm">
+                        <i class="fa-solid fa-receipt w-4"></i> Pencatatan Kas
+                    </a>
+                    <a href="admin-inquiries.html"
+                        class="flex items-center justify-between px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-regular fa-envelope w-4"></i> Pertanyaan Masuk
+                        </div>
+                        <span
+                            class="bg-white text-brand-brown text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+                    </a>
+                    <a href="admin-menu.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#D4B9AC] hover:bg-brand-terracota/80 hover:text-white font-medium text-xs transition-all">
+                        <i class="fa-solid fa-bars-staggered w-4"></i> Kelola Menu
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Logout Bottom -->
+            <div class="pt-4 border-t border-white/10">
+                <a href="login.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#E6AA8E] hover:bg-white/10 hover:text-white font-medium text-xs transition-all">
+                    <i class="fa-solid fa-right-from-bracket w-4"></i> Keluar
+                </a>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA ADMIN -->
+        <main class="ml-64 flex-1 p-8">
+
+            <!-- TOPBAR HEADER -->
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <small class="text-[11px] text-brand-muted">Panel Admin</small>
+                    <h2 class="font-bold text-xs text-brand-brown">Pencatatan Kas</h2>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button
+                        class="w-9 h-9 rounded-full bg-white border border-brand-creamDark flex items-center justify-center text-brand-brown hover:bg-brand-cream transition-colors">
+                        <i class="fa-regular fa-image text-sm"></i>
+                    </button>
+                    <div
+                        class="w-8 h-8 rounded-full bg-brand-terracota text-white flex items-center justify-center font-bold text-xs">
+                        CF
+                    </div>
+                </div>
+            </div>
+
+            <!-- JUDUL & TOMBOL AKSI -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                <div>
+                    <h1 class="font-serif text-3xl md:text-4xl text-brand-brown font-normal mb-1">Pencatatan Kas</h1>
+                    <p class="text-brand-muted text-xs md:text-sm">Ringkasan arus kas dan transaksi CaterFlow.</p>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <button
+                        class="px-5 py-2.5 bg-white border border-brand-brown text-brand-brown hover:bg-brand-cream rounded-xl text-xs font-semibold shadow-sm flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-plus text-xs"></i> Tambah Pemasukan
+                    </button>
+                    <button
+                        class="px-5 py-2.5 bg-brand-terracota hover:bg-[#A85E38] text-white rounded-xl text-xs font-semibold shadow-md flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-plus text-xs"></i> Tambah Pengeluaran
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3 SUMMARY CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+                <!-- Card 1: Total Pemasukan -->
+                <div class="bg-white p-6 rounded-2xl border border-brand-creamDark shadow-sm">
+                    <span class="text-[11px] text-brand-muted block mb-3">Total Pemasukan</span>
+                    <div class="font-serif text-3xl font-bold text-brand-brown mb-2">Rp8.570.000</div>
+                    <span class="text-[10px] text-brand-muted">3 pesanan + 1 pemasukan manual</span>
+                </div>
+
+                <!-- Card 2: Total Pengeluaran -->
+                <div class="bg-white p-6 rounded-2xl border border-brand-creamDark shadow-sm">
+                    <span class="text-[11px] text-brand-muted block mb-3">Total Pengeluaran</span>
+                    <div class="font-serif text-3xl font-bold text-brand-brown mb-2">Rp1.270.000</div>
+                    <span class="text-[10px] text-brand-muted">2 transaksi bulan ini</span>
+                </div>
+
+                <!-- Card 3: Saldo Bersih (Latar Cokelat Tua) -->
+                <div class="bg-brand-brown text-white p-6 rounded-2xl shadow-md">
+                    <span class="text-[11px] text-brand-creamDark block mb-3">Saldo Bersih</span>
+                    <div class="font-serif text-3xl font-bold text-amber-50 mb-2">Rp7.300.000</div>
+                    <span class="text-[10px] text-[#A88B7D]">Periode April 2026</span>
+                </div>
+
+            </div>
+
+            <!-- PANEL TRANSAKSI TERBARU -->
+            <div class="bg-white rounded-2xl border border-brand-creamDark p-6 shadow-sm">
+
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-brand-creamDark/60">
+                    <div>
+                        <h3 class="font-serif text-xl font-medium text-brand-brown">Transaksi Terbaru</h3>
+                        <small class="text-[10px] text-brand-muted">April 2026</small>
+                    </div>
+                    <div>
+                        <select
+                            class="px-4 py-2 rounded-xl border border-brand-creamDark text-xs bg-white text-brand-dark focus:outline-none focus:border-brand-terracota transition-colors">
+                            <option value="bulan-ini">Bulan ini</option>
+                            <option value="bulan-lalu">Bulan lalu</option>
+                            <option value="tahun-ini">Tahun ini</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- LIST TRANSAKSI -->
+                <div class="space-y-4">
+
+                    <!-- Item 1 (+ Pemasukan Manual) -->
+                    <div class="flex items-center justify-between py-2 border-b border-brand-cream/60 last:border-0">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-arrow-up text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-brand-brown">Pendapatan konsultasi acara</h4>
+                                <span class="text-[10px] text-brand-muted block">Pemasukan manual • 13 Apr 2026</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600">+Rp350.000</span>
+                    </div>
+
+                    <!-- Item 2 (+ Pembayaran Bima) -->
+                    <div class="flex items-center justify-between py-2 border-b border-brand-cream/60 last:border-0">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-arrow-up text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-brand-brown">Pembayaran CF-1047</h4>
+                                <span class="text-[10px] text-brand-muted block">Bima Santoso • 20 Apr 2026</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600">+Rp4.200.000</span>
+                    </div>
+
+                    <!-- Item 3 (+ Pembayaran Nadya) -->
+                    <div class="flex items-center justify-between py-2 border-b border-brand-cream/60 last:border-0">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-arrow-up text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-brand-brown">Pembayaran CF-1046</h4>
+                                <span class="text-[10px] text-brand-muted block">Nadya Kirana • 22 Apr 2026</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600">+Rp2.700.000</span>
+                    </div>
+
+                    <!-- Item 4 (+ Pembayaran Raka) -->
+                    <div class="flex items-center justify-between py-2 border-b border-brand-cream/60 last:border-0">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-arrow-up text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-brand-brown">Pembayaran CF-1045</h4>
+                                <span class="text-[10px] text-brand-muted block">Raka Pradana • 12 Apr 2026</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-600">+Rp1.320.000</span>
+                    </div>
+
+                    <!-- Item 5 (- Belanja bahan) -->
+                    <div class="flex items-center justify-between py-2 border-b border-brand-cream/60 last:border-0">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-brand-brown">Belanja bahan segar</h4>
+                                <span class="text-[10px] text-brand-muted block">15 Apr 2026</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-rose-600">-Rp850.000</span>
+                    </div>
+
+                    <!-- Item 6 (- Gas & operasional) -->
+                    <div class="flex items-center justify-between py-2 border-b border-brand-cream/60 last:border-0">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-brand-brown">Gas & operasional dapur</h4>
+                                <span class="text-[10px] text-brand-muted block">14 Apr 2026</span>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-rose-600">-Rp420.000</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

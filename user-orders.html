@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Pesanan - CaterFlow</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Palette CaterFlow -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            brown: '#3A1C0E',
+                            dark: '#2D1A10',
+                            terracota: '#C07047',
+                            cream: '#FAF4EE',
+                            creamDark: '#E8D9CD',
+                            muted: '#7A6558'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-cream font-sans text-brand-dark antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR USER -->
+    <header class="bg-white border-b border-brand-creamDark sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="landingPage.html" class="text-2xl font-bold text-brand-brown flex items-center gap-3">
+                <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-20 w-15 rounded-full object-cover">
+                <span>CaterFlow</span>
+            </a>
+
+            <!-- Navigasi Tengah -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="user-menu.html" class="text-brand-muted hover:text-brand-brown transition-colors">Beranda
+                    Menu</a>
+                <a href="user-orders.html" class="text-brand-brown border-b-2 border-brand-brown pb-1">Riwayat
+                    Pesanan</a>
+            </nav>
+
+            <!-- Aksi Kanan -->
+            <div class="flex items-center gap-4">
+                <a href="landingPage.html"
+                    class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 border border-brand-creamDark rounded-lg text-xs font-semibold text-brand-brown hover:bg-brand-cream transition-colors">
+                    <i class="fa-solid fa-house text-[11px]"></i> Halaman Utama
+                </a>
+
+                <!-- Cart Icon -->
+                <a href="user-checkout.html"
+                    class="w-9 h-9 rounded-full bg-brand-cream border border-brand-creamDark flex items-center justify-center text-brand-brown hover:bg-brand-creamDark transition-colors relative">
+                    <i class="fa-solid fa-cart-shopping text-xs"></i>
+                    <span
+                        class="w-4 h-4 bg-brand-terracota text-white text-[9px] font-bold rounded-full absolute -top-1 -right-1 flex items-center justify-center">2</span>
+                </a>
+
+                <!-- Profile Avatar -->
+                <div
+                    class="w-9 h-9 rounded-full bg-brand-brown text-white flex items-center justify-center font-bold text-xs">
+                    AP
+                </div>
+
+                <!-- Logout Button -->
+                <a href="login.html"
+                    class="w-9 h-9 rounded-lg border border-brand-creamDark flex items-center justify-center text-brand-muted hover:bg-rose-50 hover:text-rose-600 transition-colors"
+                    title="Keluar">
+                    <i class="fa-solid fa-right-from-bracket text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA RIWAYAT PESANAN -->
+    <main class="max-w-4xl mx-auto w-full px-6 py-12 flex-1">
+
+        <!-- HEADER SEKSI -->
+        <div class="text-center mb-10">
+            <span class="text-[10px] font-bold tracking-widest text-brand-terracota uppercase block mb-2">PANTAU DENGAN
+                MUDAH</span>
+            <h1 class="font-serif text-3xl md:text-5xl text-brand-brown font-normal mb-3">Riwayat Pesanan</h1>
+            <p class="text-brand-muted text-xs md:text-sm">Semua kabar pesanan Anda tersimpan rapi di sini.</p>
+        </div>
+
+        <!-- DAFTAR CARD RIWAYAT PESANAN -->
+        <div class="space-y-6">
+
+            <!-- CARD 1: CF-1048 (STATUS PENDING) -->
+            <div class="bg-white rounded-3xl border border-brand-creamDark p-6 shadow-sm">
+                <!-- Row 1: Nomor Pesanan & Badge Status -->
+                <div class="flex items-center justify-between pb-4 border-b border-brand-creamDark/60 mb-5">
+                    <div>
+                        <span class="text-[10px] text-brand-muted block uppercase tracking-wider font-semibold">Nomor
+                            pesanan</span>
+                        <h3 class="font-bold text-sm md:text-base text-brand-brown">CF-1048</h3>
+                    </div>
+                    <span
+                        class="px-4 py-1.5 rounded-full text-xs font-semibold bg-[#FDF3E7] text-[#D9822B]">Pending</span>
+                </div>
+
+                <!-- Row 2: Grid Detail Information -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <!-- Tanggal Acara -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-brand-cream text-brand-terracota flex items-center justify-center shrink-0 border border-brand-creamDark">
+                            <i class="fa-regular fa-calendar text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-muted block">Tanggal acara</span>
+                            <span class="text-xs font-bold text-brand-brown">18 Apr 2026 • 11:00</span>
+                        </div>
+                    </div>
+
+                    <!-- Detail Pesanan -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-brand-cream text-brand-terracota flex items-center justify-center shrink-0 border border-brand-creamDark">
+                            <i class="fa-solid fa-box text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-muted block">Pesanan</span>
+                            <span class="text-xs font-bold text-brand-brown">Nasi Box Nusantara - 50 porsi</span>
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-brand-cream text-brand-terracota flex items-center justify-center shrink-0 border border-brand-creamDark">
+                            <i class="fa-solid fa-wallet text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-muted block">Total</span>
+                            <span class="text-xs font-bold text-brand-brown">Rp1.750.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Action Button Kanan -->
+                <div class="flex justify-end pt-2">
+                    <a href="admin-inquiries.html"
+                        class="px-5 py-2.5 bg-[#FAF3EC] border border-[#F2DFCE] text-[#A6613B] hover:bg-brand-terracota hover:text-white rounded-2xl text-xs font-semibold transition-all flex items-center gap-2">
+                        Pesanan belum dikirim? Tanyakan <i class="fa-regular fa-comment-dots text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CARD 2: CF-1045 (STATUS SELESAI) -->
+            <div class="bg-white rounded-3xl border border-brand-creamDark p-6 shadow-sm">
+                <!-- Row 1: Nomor Pesanan & Badge Status -->
+                <div class="flex items-center justify-between pb-4 border-b border-brand-creamDark/60 mb-5">
+                    <div>
+                        <span class="text-[10px] text-brand-muted block uppercase tracking-wider font-semibold">Nomor
+                            pesanan</span>
+                        <h3 class="font-bold text-sm md:text-base text-brand-brown">CF-1045</h3>
+                    </div>
+                    <span
+                        class="px-4 py-1.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">Selesai</span>
+                </div>
+
+                <!-- Row 2: Grid Detail Information -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <!-- Tanggal Acara -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-brand-cream text-brand-terracota flex items-center justify-center shrink-0 border border-brand-creamDark">
+                            <i class="fa-regular fa-calendar text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-muted block">Tanggal acara</span>
+                            <span class="text-xs font-bold text-brand-brown">12 Apr 2026 • 09:00</span>
+                        </div>
+                    </div>
+
+                    <!-- Detail Pesanan -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-brand-cream text-brand-terracota flex items-center justify-center shrink-0 border border-brand-creamDark">
+                            <i class="fa-solid fa-box text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-muted block">Pesanan</span>
+                            <span class="text-xs font-bold text-brand-brown">Snack Box Senja - 60 porsi</span>
+                        </div>
+                    </div>
+
+                    <!-- Total -->
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-brand-cream text-brand-terracota flex items-center justify-center shrink-0 border border-brand-creamDark">
+                            <i class="fa-solid fa-wallet text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-brand-muted block">Total</span>
+                            <span class="text-xs font-bold text-brand-brown">Rp1.320.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Action Button Kanan -->
+                <div class="flex justify-end pt-2">
+                    <button
+                        class="px-5 py-2.5 bg-white border border-brand-creamDark hover:border-amber-400 text-brand-brown rounded-2xl text-xs font-semibold transition-all flex items-center gap-2 shadow-sm">
+                        Beri Rating & Ulasan
+                        <span class="text-amber-400 tracking-tighter text-xs">★★★★★</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-brown text-white py-8 border-t border-white/10">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#D4B9AC]">
+            <div class="flex items-center gap-2">
+                <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-8 w-6 rounded-full object-cover">
+                <span class="font-bold text-white">CaterFlow</span> © 2026. All rights reserved.
+            </div>
+            <div class="flex gap-6">
+                <a href="landingPage.html" class="hover:text-white transition-colors">Beranda</a>
+                <a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+                <a href="#" class="hover:text-white transition-colors">Bantuan</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaterFlow - Katering Spesial</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Color Palette CaterFlow -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            brown: '#3A1C0E',
+                            dark: '#2D1A10',
+                            terracota: '#C07047',
+                            cream: '#FAF4EE',
+                            creamDark: '#E8D9CD',
+                            muted: '#7A6558'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-cream text-brand-dark antialiased">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-creamDark">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="landingPage.html" class="text-2xl font-bold text-brand-brown flex items-center gap-2">
+                <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-20 w-15 rounded-full object-cover">
+                CaterFlow
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="hover:text-brand-terracota transition-colors">Home</a>
+                <a href="#menu" class="hover:text-brand-terracota transition-colors">Menu</a>
+                <a href="#paket" class="hover:text-brand-terracota transition-colors">Paket Usaha</a>
+                <a href="#testimoni" class="hover:text-brand-terracota transition-colors">Testimoni</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="login.html"
+                    class="px-5 py-2.5 text-sm font-semibold text-brand-terracota border border-brand-terracota rounded-lg hover:bg-brand-terracota hover:text-white transition-all">Login</a>
+                <a href="register.html"
+                    class="px-5 py-2.5 text-sm font-semibold text-white bg-brand-terracota rounded-lg hover:bg-[#A85E38] transition-all shadow-md">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-brand-terracota uppercase block mb-3">Katering &
+                    Event Specialist</span>
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-brown leading-tight mb-4">
+                    Katering Spesial, <br><span class="italic text-brand-terracota">Direncanakan tanpa Repot.</span>
+                </h1>
+                <p class="text-brand-muted text-base md:text-lg mb-8 leading-relaxed">
+                    Dari pertemuan bisnis hingga acara keluarga, kami menyediakan hidangan lezat berkelas dengan tata
+                    cara pemesanan terstruktur.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 mb-10">
+                    <a href="#menu"
+                        class="px-6 py-3.5 bg-brand-terracota text-white rounded-lg font-semibold text-sm hover:bg-[#A85E38] transition-all shadow-lg flex items-center gap-2">
+                        Pesan Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#menu"
+                        class="px-6 py-3.5 bg-[#EBDCD1] text-brand-brown rounded-lg font-semibold text-sm hover:bg-brand-creamDark transition-all">
+                        Lihat Menu
+                    </a>
+                </div>
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-brand-creamDark">
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-brown">4.9/5</h3>
+                        <p class="text-xs text-brand-muted">Rating Pelanggan</p>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-brown">120+</h3>
+                        <p class="text-xs text-brand-muted">Menu Pilihan</p>
+                    </div>
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold text-brand-brown">98%</h3>
+                        <p class="text-xs text-brand-muted">Tepat Waktu</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Wrapper -->
+            <div class="relative">
+                <img src="assets/img/beranda.jpg" alt="Katering Spesial"
+                    class="w-full h-[450px] object-cover rounded-3xl shadow-2xl border-4 border-white">
+                <div
+                    class="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-xs font-semibold shadow-md flex items-center gap-2">
+                    <span class="text-amber-500">★★★★★</span>
+                    <span>4.9 (1.2k+ Ulasan)</span>
+                </div>
+                <div
+                    class="absolute -bottom-6 left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-gray-100">
+                    <div
+                        class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div>
+                        <strong class="block text-xs font-bold text-gray-800">Pemesanan Terkonfirmasi</strong>
+                        <small class="text-[11px] text-gray-500">Untuk 150 Porsi Nasi Box</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU TERFAVORIT SECTION -->
+    <section id="menu" class="py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-xs font-bold tracking-widest text-brand-terracota uppercase block mb-2">PILIHAN
+                        TERPOPULER</span>
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-brown">Menu Terfavorit</h2>
+                </div>
+                <p class="text-brand-muted text-sm max-w-md">Rasakan kenikmatan paket menu paling direkomendasikan oleh
+                    ribuan pelanggan kami.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <!-- Menu Card 1 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-brand-creamDark hover:-translate-y-1.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48">
+                            <span
+                                class="absolute top-3 left-3 bg-brand-terracota text-white text-[10px] font-bold px-2.5 py-1 rounded-md z-10">Nasi Box</span>
+                            <img src="assets/img/nasibox.jpg" alt="Nasi Box"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 pb-2">
+                            <h3 class="font-bold text-brand-brown text-base mb-1">Nasi Box</h3>
+                            <p class="text-xs text-brand-muted mb-4 h-12 line-clamp-2 overflow-hidden">Nasi putih lengkap dengan lauk ayam/rendang, tempe tahu, lalapan dan sambal khas.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between border-t border-brand-cream/60 pt-3">
+                            <div>
+                                <span class="text-base font-bold text-brand-terracota">Rp25.000</span>
+                                <small class="text-[10px] text-brand-muted">/porsi</small>
+                            </div>
+                            <a href="login.html"
+                                class="px-3 py-1.5 bg-brand-cream border border-brand-creamDark text-brand-brown text-xs font-semibold rounded-lg hover:bg-brand-terracota hover:text-white transition-colors flex items-center gap-1.5">
+                                Lihat Detail <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Card 2 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-brand-creamDark hover:-translate-y-1.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48">
+                            <span
+                                class="absolute top-3 left-3 bg-brand-terracota text-white text-[10px] font-bold px-2.5 py-1 rounded-md z-10">Prasmanan</span>
+                            <img src="assets/img/prasmanan1.jpg" alt="Aneka Makanan Prasmanan"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 pb-2">
+                            <h3 class="font-bold text-brand-brown text-base mb-1">Aneka Makanan Prasmanan</h3>
+                            <p class="text-xs text-brand-muted mb-4 h-12 line-clamp-2 overflow-hidden">Berbagai pilihan makanan spesial untuk acara istimewa Anda.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between border-t border-brand-cream/60 pt-3">
+                            <div>
+                                <span class="text-base font-bold text-brand-terracota">Rp70.000</span>
+                                <small class="text-[10px] text-brand-muted">/porsi</small>
+                            </div>
+                            <a href="login.html"
+                                class="px-3 py-1.5 bg-brand-cream border border-brand-creamDark text-brand-brown text-xs font-semibold rounded-lg hover:bg-brand-terracota hover:text-white transition-colors flex items-center gap-1.5">
+                                Lihat Detail<i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Card 3 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-brand-creamDark hover:-translate-y-1.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48">
+                            <span
+                                class="absolute top-3 left-3 bg-brand-terracota text-white text-[10px] font-bold px-2.5 py-1 rounded-md z-10">Jajanan Pasar</span>
+                            <img src="assets/img/jajananpasar.jpg" alt="Jajanan Pasar" class="w-full h-full object-cover">
+                        </div>
+                       <div class="p-5 pb-2">
+                            <h3 class="font-bold text-brand-brown text-base mb-1">Aneka Jajanan Pasar</h3>
+                            <p class="text-xs text-brand-muted mb-4 h-12 line-clamp-2 overflow-hidden">Berbagai pilihan jajanan lezat dari pasar tradisional.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between border-t border-brand-cream/60 pt-3">
+                            <div>
+                                <span class="text-base font-bold text-brand-terracota">Rp10.000</span>
+                                <small class="text-[10px] text-brand-muted">/porsi</small>
+                            </div>
+                            <a href="login.html"
+                                class="px-3 py-1.5 bg-brand-cream border border-brand-creamDark text-brand-brown text-xs font-semibold rounded-lg hover:bg-brand-terracota hover:text-white transition-colors flex items-center gap-1.5">
+                                Lihat Detail<i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Card 4 -->
+                <div
+                    class="bg-white rounded-2xl overflow-hidden border border-brand-creamDark hover:-translate-y-1.5 transition-all shadow-sm hover:shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48">
+                            <span
+                                class="absolute top-3 left-3 bg-brand-terracota text-white text-[10px] font-bold px-2.5 py-1 rounded-md z-10">Dessert</span>
+                            <img src="assets/img/dessertpudding.jpg" alt="Dessert"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-5 pb-2">
+                            <h3 class="font-bold text-brand-brown text-base mb-1">Dessert</h3>
+                            <p class="text-xs text-brand-muted mb-4 h-12 line-clamp-2 overflow-hidden">Berbagai pilihan hidangan penutup untuk melengkapi acara Anda.</p>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <div class="flex items-center justify-between border-t border-brand-cream/60 pt-3">
+                            <div>
+                                <span class="text-base font-bold text-brand-terracota">Rp20.000</span>
+                                <small class="text-[10px] text-brand-muted">/porsi</small>
+                            </div>
+                            <a href="login.html"
+                                class="px-3 py-1.5 bg-brand-cream border border-brand-creamDark text-brand-brown text-xs font-semibold rounded-lg hover:bg-brand-terracota hover:text-white transition-colors flex items-center gap-1.5">
+                                Lihat Detail<i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="login.html"
+                    class="inline-flex items-center gap-2 px-6 py-3 border border-brand-brown text-brand-brown font-semibold text-sm rounded-lg hover:bg-brand-brown hover:text-white transition-all">
+                    Lihat Semua Menu <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    </div>
+    </section>
+
+    <!-- PAKET HARGA -->
+    <section id="paket" class="py-20 bg-brand-brown text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-14">
+                <span class="text-xs font-bold tracking-widest text-brand-creamDark uppercase block mb-2">PILIHAN ANGGARAN</span>
+                <h2 class="font-serif text-3xl md:text-4xl mb-3">Paket untuk Setiap Momen</h2>
+                <p class="text-brand-creamDark text-sm">Pilih paket yang sesuai dengan jumlah porsi dan kebutuhan acara
+                    Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Paket Hemat -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold mb-1">Hemat</h3>
+                        <p class="text-xs text-brand-creamDark mb-6">Untuk Acara Kecil</p>
+                        <div class="text-3xl font-bold mb-6">Rp22.000 <span
+                                class="text-xs font-normal text-brand-creamDark">/porsi</span></div>
+                        <ul class="space-y-3 text-sm text-brand-cream mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i> 1
+                                Menu Utama</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i> 2
+                                Makanan Pendamping</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i>
+                                Air Mineral</li>
+                        </ul>
+                    </div>
+                    <button
+                        class="w-full py-3 border border-white/30 rounded-lg font-semibold text-sm hover:bg-white hover:text-brand-brown transition-all">Pilih
+                        Paket</button>
+                </div>
+
+                <!-- Paket Favorit -->
+                <div
+                    class="bg-white/10 border-2 border-brand-terracota rounded-2xl p-8 flex flex-col justify-between relative shadow-2xl">
+                    <span
+                        class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-terracota text-white text-xs font-bold px-4 py-1 rounded-full">PALING
+                        POPULER</span>
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold mb-1">Favorit</h3>
+                        <p class="text-xs text-brand-creamDark mb-6">Acara Syukuran & Kantor</p>
+                        <div class="text-3xl font-bold mb-6">Rp35.000 <span
+                                class="text-xs font-normal text-brand-creamDark">/porsi</span></div>
+                        <ul class="space-y-3 text-sm text-brand-cream mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i> 2
+                                Menu Utama Pilihan</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i> 3
+                                Makanan Pendamping</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i>
+                                Buah & Air Mineral</li>
+                        </ul>
+                    </div>
+                    <button
+                        class="w-full py-3 bg-brand-terracota text-white rounded-lg font-semibold text-sm hover:bg-[#A85E38] transition-all">Pilih
+                        Paket</button>
+                </div>
+
+                <!-- Paket Premium -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-2xl font-bold mb-1">Premium</h3>
+                        <p class="text-xs text-brand-creamDark mb-6">Pernikahan & Event Besar</p>
+                        <div class="text-3xl font-bold mb-6">Rp58.000 <span
+                                class="text-xs font-normal text-brand-creamDark">/porsi</span></div>
+                        <ul class="space-y-3 text-sm text-brand-cream mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i> 3
+                                Menu Utama Prasmanan</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i>
+                                Dessert & Es Buah</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-terracota"></i>
+                                Gratis Layanan Pramusaji</li>
+                        </ul>
+                    </div>
+                    <button
+                        class="w-full py-3 border border-white/30 rounded-lg font-semibold text-sm hover:bg-white hover:text-brand-brown transition-all">Pilih
+                        Paket</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA KERJA -->
+    <section id="cara-kerja" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest text-brand-terracota uppercase block mb-2">LANGKAH
+                    MUDAH</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-brown mb-2">Cara Kerja Pemesanan</h2>
+                <p class="text-brand-muted text-sm">Proses simpel dan transparan dari awal memilih hingga hidangan siap
+                    disajikan.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 rounded-full bg-[#F4E4D7] text-brand-terracota text-2xl flex items-center justify-center mx-auto mb-4 relative">
+                        <i class="fa-solid fa-utensils"></i>
+                        <span
+                            class="absolute top-0 right-0 w-6 h-6 rounded-full bg-brand-terracota text-white text-xs font-bold flex items-center justify-center">1</span>
+                    </div>
+                    <h3 class="font-bold text-brand-brown text-lg mb-2">Pilih Menu</h3>
+                    <p class="text-xs text-brand-muted">Tentukan varian menu atau paket yang sesuai acara.</p>
+                </div>
+
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 rounded-full bg-[#F4E4D7] text-brand-terracota text-2xl flex items-center justify-center mx-auto mb-4 relative">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span
+                            class="absolute top-0 right-0 w-6 h-6 rounded-full bg-brand-terracota text-white text-xs font-bold flex items-center justify-center">2</span>
+                    </div>
+                    <h3 class="font-bold text-brand-brown text-lg mb-2">Hitung Budget</h3>
+                    <p class="text-xs text-brand-muted">Gunakan kalkulator budget untuk menentukan porsi.</p>
+                </div>
+
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 rounded-full bg-[#F4E4D7] text-brand-terracota text-2xl flex items-center justify-center mx-auto mb-4 relative">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span
+                            class="absolute top-0 right-0 w-6 h-6 rounded-full bg-brand-terracota text-white text-xs font-bold flex items-center justify-center">3</span>
+                    </div>
+                    <h3 class="font-bold text-brand-brown text-lg mb-2">Bayar / DP</h3>
+                    <p class="text-xs text-brand-muted">Lakukan pembayaran DP dan upload bukti bayar.</p>
+                </div>
+
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 rounded-full bg-[#F4E4D7] text-brand-terracota text-2xl flex items-center justify-center mx-auto mb-4 relative">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span
+                            class="absolute top-0 right-0 w-6 h-6 rounded-full bg-brand-terracota text-white text-xs font-bold flex items-center justify-center">4</span>
+                    </div>
+                    <h3 class="font-bold text-brand-brown text-lg mb-2">Pesanan Terkirim!</h3>
+                    <p class="text-xs text-brand-muted">Makanan hangat dikirim tepat waktu ke lokasi Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni" class="py-16 bg-white border-y border-brand-creamDark">
+        <div class="max-w-7xl mx-auto px-6">
+            <span class="text-xs font-bold tracking-widest text-brand-terracota uppercase block mb-2">APA KATA
+                MEREKA</span>
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-brown mb-10">Apa Kata Mereka?</h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-creamDark">
+                    <div class="text-amber-500 mb-3 text-sm">★★★★★</div>
+                    <p class="text-xs md:text-sm text-brand-dark italic mb-6">"Rasanya lezat dan porsinya pas banget
+                        buat acara kantor kami. Tetap hangat saat sampai, recommended!"</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-brand-terracota text-white font-bold flex items-center justify-center text-sm">
+                            S</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brand-brown">Siti Rahma</h4>
+                            <small class="text-[11px] text-brand-muted">Jakarta Selatan</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-creamDark">
+                    <div class="text-amber-500 mb-3 text-sm">★★★★★</div>
+                    <p class="text-xs md:text-sm text-brand-dark italic mb-6">"Pelayanan ramah dan tepat waktu. Pilihan
+                        menu lengkap, tamu acara syukuran saya sangat menikmati."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-brand-terracota text-white font-bold flex items-center justify-center text-sm">
+                            B</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brand-brown">Budi Utomo</h4>
+                            <small class="text-[11px] text-brand-muted">Bekasi</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-cream p-6 rounded-2xl border border-brand-creamDark">
+                    <div class="text-amber-500 mb-3 text-sm">★★★★★</div>
+                    <p class="text-xs md:text-sm text-brand-dark italic mb-6">"Fitur AI asistennya sangat membantu
+                        merekomendasikan menu sesuai budget saya yang terbatas."</p>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-brand-terracota text-white font-bold flex items-center justify-center text-sm">
+                            R</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-brand-brown">Rini Pertiwi</h4>
+                            <small class="text-[11px] text-brand-muted">Depok</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI ASSISTANT SECTION -->
+    <section class="py-20 bg-[#3A1C0E] text-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- SISI KIRI (Teks & Tombol Coba AI) -->
+            <div>
+                <span class="text-xs font-bold tracking-widest text-[#E6AA8E] uppercase block mb-4">CERDAS &
+                    PERSONAL</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-normal mb-6 leading-tight">
+                    AI Asisten yang Selalu <br>Siap Membantu
+                </h2>
+                <p class="text-[#D4B9AC] text-sm md:text-base mb-8 leading-relaxed max-w-lg">
+                    Bingung memilih menu? Ceritakan jumlah tamu, jenis acara, dan budget Anda. Asisten kami akan
+                    menyusun rekomendasi terbaik dalam hitungan detik.
+                </p>
+
+                <ul class="space-y-4 text-sm text-[#FAF4F0] mb-10">
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-white"></i> Rekomendasi sesuai anggaran
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-white"></i> Jawaban instan 24/7
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-white"></i> Konsultasi menu tanpa biaya
+                    </li>
+                </ul>
+
+                <a href="#"
+                    class="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#3A1C0E] rounded-xl font-semibold text-sm hover:bg-[#FAF4EE] transition-all shadow-md">
+                    Coba AI Asisten <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
+                </a>
+            </div>
+
+            <!-- SISI KANAN (Mockup Chat Widget) -->
+            <div class="bg-white rounded-3xl overflow-hidden shadow-2xl text-[#2D1A10]">
+                <!-- Header Chat -->
+                <div class="bg-[#FAF4EE] px-6 py-4 flex items-center gap-3 border-b border-[#E8D9CD]">
+                    <div class="w-10 h-10 rounded-xl bg-[#C07047] text-white flex items-center justify-center">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-[#3A1C0E]">Catera AI</h4>
+                        <div class="flex items-center gap-1.5 text-[11px] text-emerald-600 font-medium">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Siap membantu
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bubble Pesan Chat -->
+                <div class="p-6 bg-white flex flex-col gap-4 min-h-[300px]">
+                    <div
+                        class="bg-[#FAF4EE] p-4 rounded-2xl text-xs max-w-[85%] self-start leading-relaxed text-[#4A3A30]">
+                        Halo! Saya siap membantu merencanakan katering Anda. Berapa jumlah tamunya?
+                    </div>
+
+                    <div
+                        class="bg-[#C07047] text-white p-4 rounded-2xl text-xs max-w-[85%] self-end leading-relaxed shadow-sm">
+                        Sekitar 80 orang, budget saya Rp3 juta.
+                    </div>
+
+                    <div
+                        class="bg-[#FAF4EE] p-4 rounded-2xl text-xs max-w-[85%] self-start leading-relaxed text-[#4A3A30]">
+                        Dengan budget Rp37.500/porsi, saya rekomendasikan <strong>Nasi Box Nusantara</strong>. Sudah
+                        termasuk buah dan air mineral.
+
+                        <div class="flex gap-2 mt-3">
+                            <button
+                                class="px-3 py-1.5 rounded-full border border-[#C07047] text-[#C07047] text-[11px] font-medium hover:bg-[#C07047] hover:text-white transition-colors">Lihat
+                                menu</button>
+                            <button
+                                class="px-3 py-1.5 rounded-full border border-[#C07047] text-[#C07047] text-[11px] font-medium hover:bg-[#C07047] hover:text-white transition-colors">Hitung
+                                ulang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Box -->
+                <div class="p-4 bg-white border-t border-[#E8D9CD] flex items-center justify-between gap-3">
+                    <input type="text" placeholder="Ketik pesan Anda..." disabled
+                        class="w-full text-xs text-gray-400 bg-transparent outline-none cursor-not-allowed">
+                    <button type="button"
+                        class="w-9 h-9 rounded-xl bg-[#C07047] text-white flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FLOATING BUTTON (Tetap di Pojok Kanan Bawah Saat Di-scroll) -->
+    <a href="#"
+        class="fixed bottom-6 right-6 w-14 h-14 bg-[#C07047] hover:bg-[#A85E38] text-white rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 z-50 border-2 border-white">
+        <i class="fa-regular fa-comment-dots text-2xl"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-brand-creamDark py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <a href="#" class="text-2xl font-bold text-white flex items-center gap-2 mb-4">
+                    <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="w-15 h-20 rounded-full"> CaterFlow
+                </a>
+                <p class="text-xs leading-relaxed text-gray-400">Katering Nusantara berkualitas dengan pelayanan terbaik
+                    untuk semua momen berharga Anda.</p>
+            </div>
+            <div>
+                <h4 class="text-white text-sm font-bold mb-4">Navigasi</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#menu" class="hover:text-white transition-colors">Menu</a></li>
+                    <li><a href="#paket" class="hover:text-white transition-colors">Paket</a></li>
+                    <li><a href="#testimoni" class="hover:text-white transition-colors">Testimoni</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-sm font-bold mb-4">Kontak Kami</h4>
+                <p class="text-xs mb-2"><i class="fa-solid fa-phone mr-2"></i> +62 812-3456-7890</p>
+                <p class="text-xs"><i class="fa-solid fa-envelope mr-2"></i> info@caterflow.com</p>
+            </div>
+            <div>
+                <h4 class="text-white text-sm font-bold mb-4">Ikuti Kami</h4>
+                <div class="flex gap-3">
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-terracota transition-colors"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-terracota transition-colors"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-terracota transition-colors"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-6 text-center text-[11px] text-gray-500">
+            <p>&copy; 2026 CaterFlow. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

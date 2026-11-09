@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Akun - CaterFlow</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Palette CaterFlow -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            brown: '#3A1C0E',
+                            dark: '#2D1A10',
+                            terracota: '#C07047',
+                            cream: '#FAF4EE',
+                            creamDark: '#E8D9CD',
+                            muted: '#7A6558'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-cream font-sans antialiased text-brand-dark">
+
+    <div class="min-h-screen flex flex-col md:flex-row">
+
+        <!-- SISI KIRI (Branding Banner - Brown Background) -->
+        <div class="md:w-1/2 bg-brand-brown text-amber-50 p-8 md:p-16 flex flex-col justify-between relative bg-cover bg-center"
+            style="background-image: linear-gradient(rgba(58, 28, 14, 0.88), rgba(58, 28, 14, 0.92)), url('assets/images/auth-bg.jpg');">
+
+            <!-- Kembali ke Beranda -->
+            <div>
+                <a href="landingPage.html"
+                    class="inline-flex items-center gap-2 text-xs md:text-sm text-brand-creamDark hover:text-white transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali ke beranda
+                </a>
+            </div>
+
+            <!-- Content Utama Banner -->
+            <div class="my-12 md:my-0 max-w-md">
+                <div class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3 mb-6">
+                    <img src="assets/img/logo.jpg" alt="Logo CaterFlow" class="h-20 w-15 rounded-full">
+                    CaterFlow
+                </div>
+                <span class="text-[11px] font-bold tracking-widest text-[#E6AA8E] uppercase block mb-3">CATERING LEBIH
+                    MUDAH</span>
+                <h1 class="font-serif text-3xl md:text-5xl font-normal leading-tight mb-4 text-amber-50">
+                    Setiap acara layak mendapat sajian <span class="italic text-[#E6AA8E]">yang istimewa.</span>
+                </h1>
+                <p class="text-sm md:text-base text-[#D4B9AC] leading-relaxed">
+                    Rencanakan menu, atur budget, dan pantau pesanan dalam satu tempat.
+                </p>
+            </div>
+
+            <!-- Footer Banner -->
+            <div class="text-xs text-[#A88B7D]">
+                Dipercaya lebih dari 500 pelanggan di Jabodetabek.
+            </div>
+        </div>
+
+        <!-- SISI KANAN (Form Buat Akun - Cream Background) -->
+        <div class="md:w-1/2 bg-brand-cream p-8 md:p-12 flex items-center justify-center relative">
+            <div class="w-full max-w-md py-6">
+
+                <span
+                    class="text-[11px] font-bold tracking-widest text-brand-terracota uppercase block mb-1 text-center md:text-left">SELAMAT
+                    DATANG</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-brown font-medium mb-1 text-center md:text-left">
+                    Create your account</h2>
+                <p class="text-xs md:text-sm text-brand-muted mb-6 text-center md:text-left">Buat akun untuk mulai
+                    merencanakan sajian spesial Anda.</p>
+
+                <!-- Form Register -->
+                <form action="#" method="POST" class="space-y-4">
+                    <!-- Nama Lengkap -->
+                    <div>
+                        <label for="name" class="block text-xs font-semibold text-brand-dark mb-1">Nama lengkap</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required
+                            class="w-full px-4 py-2.5 rounded-lg border border-[#E2D5CB] bg-white text-sm focus:outline-none focus:border-brand-terracota transition-colors">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-xs font-semibold text-brand-dark mb-1">Email</label>
+                        <input type="email" id="email" name="email" placeholder="nama@email.com" required
+                            class="w-full px-4 py-2.5 rounded-lg border border-[#E2D5CB] bg-white text-sm focus:outline-none focus:border-brand-terracota transition-colors">
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label for="password" class="block text-xs font-semibold text-brand-dark mb-1">Password</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" placeholder="Minimal 8 karakter"
+                                required
+                                class="w-full px-4 py-2.5 rounded-lg border border-[#E2D5CB] bg-white text-sm focus:outline-none focus:border-brand-terracota transition-colors pr-10">
+                            <button type="button"
+                                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-terracota text-xs">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Konfirmasi Password -->
+                    <div>
+                        <label for="password_confirmation"
+                            class="block text-xs font-semibold text-brand-dark mb-1">Konfirmasi password</label>
+                        <div class="relative">
+                            <input type="password" id="password_confirmation" name="password_confirmation"
+                                placeholder="Ulangi password" required
+                                class="w-full px-4 py-2.5 rounded-lg border border-[#E2D5CB] bg-white text-sm focus:outline-none focus:border-brand-terracota transition-colors pr-10">
+                            <button type="button"
+                                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-terracota text-xs">
+                                <i class="fa-regular fa-eye-slash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Checkbox Syarat & Ketentuan -->
+                    <div class="flex items-center gap-2 pt-1">
+                        <input type="checkbox" id="terms" name="terms" required
+                            class="w-4 h-4 accent-brand-terracota rounded border-gray-300">
+                        <label for="terms" class="text-[11px] text-brand-muted">
+                            Saya menyetujui <a href="#"
+                                class="text-brand-terracota font-semibold hover:underline">Syarat & Ketentuan</a> dan <a
+                                href="#" class="text-brand-terracota font-semibold hover:underline">Kebijakan
+                                Privasi</a>
+                        </label>
+                    </div>
+
+                    <!-- Tombol Submit -->
+                    <button type="submit"
+                        class="w-full py-3 bg-brand-terracota text-white rounded-lg font-semibold text-sm hover:bg-[#A85E38] transition-all shadow-md flex items-center justify-center gap-2 mt-2">
+                        Buat akun <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </form>
+
+                <div class="text-center mt-5 text-xs text-brand-muted">
+                    Sudah punya akun? <a href="login.html"
+                        class="text-brand-terracota font-semibold hover:underline">Masuk</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
